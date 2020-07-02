@@ -22,7 +22,9 @@ mongoose.connect(process.env.DATABASE,{
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
-}) .then(() => console.log('Database Connected'));
+}) .then(() => console.log('Database Connected')).catch(err => {
+    console.log(JSON.stringify(err, Object.getOwnPropertyNames(err)));
+});
  
 
 //middleware

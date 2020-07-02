@@ -5,10 +5,6 @@ import {Link} from 'react-router-dom'
 
 
 const Dashboard = () => {
-
-    // destructuring
-    const {user : {_id, name, email, role}} = isAuthenticated()
-
     const userLinks = () => {
         return (
             <div className="card">
@@ -25,7 +21,7 @@ const Dashboard = () => {
         )
     }
 
-    const userInfo = () => {
+    const userInfo = (name, email, role) => {
         return (
             <div className="card mb-5">
                 <h3 className="card-header">
@@ -51,24 +47,32 @@ const Dashboard = () => {
         )
     }
 
-    return(
-        <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
-            
-            <div className="row">
+    // destructuring
+    const auth = isAuthenticated();
+    if (auth && auth.user) {
+        let {name, email, role} = auth.user;
 
-                <div className="col-3">
-                    {userLinks()}
-                </div>    
+        return(
+            <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
+                
+                <div className="row">
 
-                <div className="col-9">
-                    {userInfo()}
-                    {purchaseHistory()}
+                    <div className="col-3">
+                        {userLinks()}
+                    </div>    
+
+                    <div className="col-9">
+                        {userInfo(name, email, role)}
+                        {purchaseHistory()}
+                    </div>
+
                 </div>
 
-            </div>
-
-        </Layout>
-    );
+            </Layout>
+        );
+    } else {
+        return(null);
+    }
 };
 
 

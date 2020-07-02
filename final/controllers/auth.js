@@ -8,10 +8,11 @@ const { sign } = require('jsonwebtoken');
 
 
 exports.signup = (req, res) => {
-   // console.log("req.body", req.body);
+//    console.log("req.body", req.body);
     const user = new User(req.body) //create a new user
     user.save((err, user) => {
         if(err){
+            console.log(JSON.stringify(err, Object.getOwnPropertyNames(err)));
             return res.status(400).json({
                 err: errorHandler(err)
             });
