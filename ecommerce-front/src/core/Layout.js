@@ -1,11 +1,14 @@
 import React from 'react';
 import Menu from './Menu'
+import "../style.css";
+// import bgimage from '../images/3.jpeg'
+// style={{backgroundImage: `url(${bgimage})`}}
 
 const Layout = ( {title = 'Title', description = 'Description', className, children} )=> 
 (
-    <div>
+    <div className="container">
         <Menu />
-        <div className="jumbotron">
+        <div className="jumbotron" >
             <h2>{title}</h2>
             <p className="lead"> {description} </p>
         </div>

@@ -13,7 +13,9 @@ const isActive = (history, path) => {
 
 
 
-const Menu = ({ history }) => (
+const Menu = ({ history }) => {
+    const auth = isAuthenticated();
+    return (
     <div>
         <ul className="nav nav-tabs bg-dark">
 
@@ -23,7 +25,13 @@ const Menu = ({ history }) => (
                 </Link>
             </li>
 
-            {isAuthenticated() && isAuthenticated().user.role === 0 && (
+            <li className="nav-item">
+                <Link className="nav-link" style={isActive(history, '/')} to="/shop">
+                    Shop
+                </Link>
+            </li>
+
+            {auth && auth.user && auth.user.role === 0 && (
                 <li className="nav-item">
                 <Link className="nav-link" style={isActive(history, '/user/dashboard')} to="/user/dashboard">
                     Dashboard
@@ -31,15 +39,7 @@ const Menu = ({ history }) => (
             </li>
             )}
 
-            {isAuthenticated() && isAuthenticated().user.role === 1 && (    
-                <li className="nav-item">
-                <Link className="nav-link" style={isActive(history, '/admin/dashboard')} to="/admin/dashboard">
-                    Dashboard
-                </Link>
-            </li>
-            )}
-
-            {!isAuthenticated() && (
+            {!auth && (
                 <Fragment>
                     <li className="nav-item">
                         <Link className="nav-link" style={isActive(history, '/signin')} to="/signin">
@@ -56,7 +56,7 @@ const Menu = ({ history }) => (
                 </Fragment>
             )}
             
-            {isAuthenticated() && (
+            {auth && (
                 <div>
                     <li className="nav-item">
                     <span className="nav-link"
@@ -73,6 +73,7 @@ const Menu = ({ history }) => (
         </ul>
     </div>
 );
+};
 
 
 export default withRouter(Menu);

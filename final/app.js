@@ -22,15 +22,18 @@ mongoose.connect(process.env.DATABASE,{
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true
-}) .then(() => console.log('Database Connected'));
+}) .then(() => console.log('Database Connected')).catch(err => {
+    // console.log(JSON.stringify(err, Object.getOwnPropertyDescriptor(err)));
+});
  
 
 //middleware
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
-app.use(cors());
+
 
 
 //routes middleware
