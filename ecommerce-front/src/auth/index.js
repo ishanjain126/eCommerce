@@ -23,7 +23,7 @@ export const signup = (user) => {
 
 
 
-export const signin = (user) => {
+export const signin = user => {
     // console.log(name, email, password);
     return (
         fetch(`${API}/signin`, {
@@ -76,7 +76,7 @@ export const signout = (next) => {
 
 // helper method to hide the links, when the user is logged in and when he is not
 export const isAuthenticated = () => {
-    if(typeof window == undefined){
+    if(typeof window == 'undefined'){
         return false
     }
     if (localStorage.getItem('jwt')){

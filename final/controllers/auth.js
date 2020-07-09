@@ -33,7 +33,7 @@ exports.signin = (req, res) =>{
     User.findOne({ email }, (err, user) => {
         if(err || !user){
             return res.status(400).json({
-                err: "User with email does not exist. Please signup"
+                error: "User with email does not exist. Please signup"
             });
         }
         // if user, make user the email and password matched

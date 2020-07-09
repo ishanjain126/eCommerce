@@ -24,7 +24,7 @@ const Product = props => {
                     else{
                         setRelatedProduct(data);
                     }
-                })
+                });
             }
         });
     };
