@@ -96,5 +96,12 @@ export const removeItem = (productId) => {
 
     // if we dont return then it will update only the local storage
     return cart;
-}
+};
 
+
+export const emptyCart = next => {
+    if(typeof window != undefined){
+        localStorage.removeItem("cart");
+        next();
+    }
+}
