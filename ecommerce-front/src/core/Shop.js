@@ -6,7 +6,6 @@ import Checkbox from './Checkbox';
 import RadioBox from './RadioBox';
 import { prices } from './fixedPrices';
 import Carousel from 'react-bootstrap/Carousel';
-import { StickyContainer, Sticky } from 'react-sticky';
 
 // this is the component which will be making all the backend requests, depending upon the filters. 
 
