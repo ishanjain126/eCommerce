@@ -52,7 +52,7 @@ const Home = () =>{
                         </div>
                     ))}
                     </div>
-                    <div class="new-arrivals"></div>
+                    <div class="new-arrivals">NEW<br />ARRIVALS</div>
                     </div>
                 </div>
             <img src={img_src} class="banner" />

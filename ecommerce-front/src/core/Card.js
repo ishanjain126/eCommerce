@@ -124,7 +124,7 @@ const Card = ({
       <ShowImage item={product} url="product" />
       <div class="card-info"></div>
       <div className="card-info">
-        <h4>{product.name}</h4>
+        <h4 class="card-text">{product.name}</h4>
         {/* <p>{product.description.substring(0, 100)} </p> */}
         <p class="card-price">$ {product.price}</p>
         {/* <p>Category: {product.category && product.category.name}</p> */}

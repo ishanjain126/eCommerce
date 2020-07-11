@@ -1,3 +1,8 @@
+@font-face {
+    font-family: newArrivals;
+    src: url("./fonts/Frontage-Outline.otf");
+}  
+
 
 body{
     background: rgb(255, 255, 255);
@@ -19,7 +24,7 @@ body{
 
 .product-img {
     background-color: #000000;
-    min-height: 300px;;
+    min-height: 270px;;
 }
 
 
@@ -301,9 +306,22 @@ a:active{
 
 .new-arrivals{
     width: 15%;
-    height: 300px;
+    height: 270px;
+    font-family: newArrivals;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: larger;
 }
 
 .include-logo{
     display: flex;
+}
+
+.card-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
 }
