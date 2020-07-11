@@ -118,18 +118,20 @@ const Card = ({
 
     //   </div>
     // </div>
-    <div>
+    <div class="card">
       {shouldRedirect(redirect)}
       {showStock(product.quantity)}
       <ShowImage item={product} url="product" />
-      <div class="card-info"></div>
-      <div className="card-info">
+      <div class="card-info">
+
         <div class="card-text">{product.name}</div>
         {/* <p>{product.description.substring(0, 100)} </p> */}
-        <div class="card-price">$ {product.price}</div>
+
         {/* <p>Category: {product.category && product.category.name}</p> */}
         {/* <p>Added {moment(product.createdAt).fromNow()}</p> */}
         <div class="card-actions">
+          <div class="card-price">$ {product.price}</div>
+
           {showViewButton(showViewProductButton)}
 
           {showAddToCartBtn(showAddToCartButton)}
