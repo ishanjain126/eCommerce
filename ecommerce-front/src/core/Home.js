@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Layout from './Layout';
-import { getProducts } from './apiCore'
+import { getProducts } from './apiCore' 
 import Card from './Card';
 import Search from './Search'
-
 
 var img_src =require(`../images/banner.png`)
 var seller_src =require(`../images/best.png`)
@@ -71,6 +70,17 @@ const Home = () =>{
                     ))}
                     </div>
                 </div>
+            </div>
+            <div class="custom-footer">
+                <div class="grad-overlay">
+                        <div class="icons">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </div>
+                        <div class="copyright">Copyright@2020</div>
+                        <div class="extra">UNDECIDED</div>
+                    </div>
             </div>
         </Layout>
     );
