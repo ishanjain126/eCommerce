@@ -2,7 +2,6 @@ import {API} from '../config';
 import queryString from "query-string";
 
 
-
 export const getProducts = (sortBy) => {
     return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
         method: "GET"
@@ -19,18 +18,18 @@ export const getCategories = () => {
         method: "GET"
     })
     .then(response => {
-        return response.json()
+        return response.json();
     }) 
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
 
-}
+};
 
 export const getFilteredProducts = ( skip, limit, filters = {} ) => {
 
     const data = {
         limit, skip, filters
-    }
-    // console.log(name, email, password);
+    };
+
     return fetch(`${API}/products/by/search`, {
         method: "POST",
         headers: {
@@ -45,7 +44,7 @@ export const getFilteredProducts = ( skip, limit, filters = {} ) => {
     })
     .catch(err => {
         console.log(err);
-    })
+    });
 };
 
 // asking backend to get the desired result when searching a product
@@ -133,8 +132,7 @@ export const createOrder = (userId, token, createOrderData) => {
         body: JSON.stringify({ order: createOrderData })
     })
         .then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
-};
+            return (response.json());
+        }).catch(err => console.log(err));
+    };
 
