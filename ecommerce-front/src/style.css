@@ -26,7 +26,6 @@ body{
     min-height: 100px;;
 }
 
-
 .jumbotron h2{
     margin-top: -20px;
 }
@@ -234,8 +233,8 @@ a:active{
 }
 
 .prod-row{
-    width: 90%;
     display: flex;
+    justify-content: space-between;
 }
 
 .new-card{
@@ -248,12 +247,26 @@ a:active{
     height: 100%;
 }
 
-.card-info{
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.card-info{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    /* align-items: center;*/
+    text-align: center; 
+    flex-grow: 1;
+    justify-content: space-between;
+    /* align-items: end; */
+    flex-direction: column;
+    display: flex;
+    /* display: flex; */
+
 }
 
 .button-center{
@@ -320,11 +333,12 @@ a:active{
     display: flex;
 }
 
-.card-text{
+/* .card-text{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+*/
 
 .best-sellers{
     width: 15%;
