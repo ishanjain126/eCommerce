@@ -7,7 +7,7 @@ const { userById } = require("../controllers/user")
 const { create } = require("../controllers/order")
 
 
-router.post('order/create/:userId', requireSignin, isAuth, () => {console.log("HI")});
+router.post('/create/:userId', requireSignin, isAuth, create);
 router.param('userId', userById);
 
 
