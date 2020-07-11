@@ -1,6 +1,6 @@
 @font-face {
     font-family: newArrivals;
-    src: url("./fonts/Frontage-Outline.otf");
+    src: url("./fonts/Westfalia-Regular.otf");
 }  
 
 
@@ -312,7 +312,8 @@ a:active{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: larger;
+    font-size: x-large;
+    color: #222222;
 }
 
 .include-logo{
@@ -322,5 +323,5 @@ a:active{
 .card-text{
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: clip;
+    text-overflow: ellipsis;
 }

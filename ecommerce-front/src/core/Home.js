@@ -43,7 +43,6 @@ const Home = () =>{
     return (
         <Layout title = "Home Page" description = "Undecided" className="container-fluid">
             <div class="body-pad">
-                <h2 className="mb-4"> New Arrivals </h2>
                 <div class="include-logo">
                     <div className="prod-row">
                     {productsByArrival.map((product, i) => (
