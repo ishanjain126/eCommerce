@@ -451,6 +451,12 @@ a:active {
     border-right: 1px solid white;
 }
 
+
+.home_img{
+    width: 30px;
+    height:30px;
+}
+
 .copyright{
     width: 60%;
     color: white;

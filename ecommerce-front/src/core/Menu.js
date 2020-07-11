@@ -4,6 +4,8 @@ import { signout, isAuthenticated } from '../auth';
 import {itemTotal} from './cartHelpers';
 import Search from './Search';
 
+var img_src1 = require(`../images/favicon.png`);
+
 const isActive = (history, path) => {
     if(history.location.pathname === path) {
         return {color: 'white'}
@@ -19,7 +21,7 @@ const Menu = ({ history }) => {
     const auth = isAuthenticated();
     return (
     <div id="menu" class="nav-row">
-        <div class="nav-blocks home"><Link style={isActive(history, '/')} to="/"><i>U</i></Link></div>
+        <div class="nav-blocks home"><Link style={isActive(history, '/')} to="/"><img className="home_img" src={img_src1}/></Link></div>
         <Search />
         <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/shop')} to="/shop">Shop</Link></div>
         <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/cart')} to="/cart">Cart <sup><small className="cart-badge">{itemTotal()}</small></sup></Link></div>
