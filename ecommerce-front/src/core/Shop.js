@@ -30,7 +30,7 @@ const Shop  = () => {
             else{
                 setCategories(data)
             }
-        });
+        }).catch((err) => {console.error(err)});
     };
 
     // filtering the components on the basis of filters (by categories and by price range)
@@ -46,7 +46,7 @@ const Shop  = () => {
                 setSize(data.size)
                 setSkip(0)
             }
-        })
+        }).catch((err) => {console.error(err)})
     }
 
     const loadMore = () => {
@@ -60,7 +60,7 @@ const Shop  = () => {
                 setSize(data.size)
                 setSkip(toSkip)
             }
-        })
+        }).catch((err) => {console.error(err)})
     }
 
     const loadMoreButton = () => {

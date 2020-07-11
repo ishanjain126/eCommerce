@@ -24,9 +24,9 @@ const Product = props => {
                     else{
                         setRelatedProduct(data);
                     }
-                });
+                }).catch((err) => {console.error(err)});
             }
-        });
+        }).catch((err) => {console.error(err)});
     };
 
     // First argument to useEffect

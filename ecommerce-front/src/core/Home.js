@@ -18,7 +18,8 @@ const Home = () =>{
             else {
                 setProductsBySell(data)
             }
-        });
+        })
+        .catch((err) => {console.error(err)});
     };
 
     const loadProductsByArrival = () => {
@@ -29,7 +30,8 @@ const Home = () =>{
             else {
                 setProductsByArrival(data)
             }
-        });
+        })
+        .catch((err) => {console.error(err)});
     };
 
     useEffect( () => {

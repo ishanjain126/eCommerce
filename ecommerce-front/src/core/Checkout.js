@@ -29,7 +29,8 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                 console.log(data);
                 setData({ clientToken: data.clientToken });
             }
-        });
+        })
+        .catch((err) => {console.error(err)});
     };
  
     useEffect(() => {
