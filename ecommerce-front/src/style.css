@@ -333,7 +333,7 @@ a:active{
     display: flex;
 }
 
-/* .card-text{
+.card-text{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
@@ -343,9 +343,7 @@ a:active{
     height: 17em;
     width: 80em;
 }
-    text-overflow: ellipsis;
-}
-*/
+
 
 .best-sellers{
     width: 15%;
