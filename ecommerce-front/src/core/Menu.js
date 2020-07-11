@@ -57,9 +57,7 @@ const Menu = ({ history }) => {
                     </div>
 
                 )}
-
             </div>
-            <div class="menu-background"></div>
         </div>
 
     );

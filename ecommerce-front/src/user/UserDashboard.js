@@ -31,6 +31,7 @@ const Dashboard = () => {
         const userInfo = (name, email, role) => {
             return (
                 <div className="card mb-5">
+                    <div class="menu-background"></div>
                     <h3 className="card-header">
                         User Information
                     </h3>

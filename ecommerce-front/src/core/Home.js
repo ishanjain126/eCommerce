@@ -46,6 +46,7 @@ const Home = () => {
 
     return (
         <Layout title="Home Page" description="Undecided" className="container-fluid">
+            <div class="menu-background"></div>
             <Carousel>
                 <Carousel.Item>
                     <img

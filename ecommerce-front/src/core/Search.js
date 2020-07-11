@@ -119,7 +119,7 @@ const Search = () => {
                 {searchForm()} 
                 {/* {JSON.stringify(results)} */}
             </div>
-            <div id="results" className="container-fluid mb-3">
+            <div id="results"className="container-fluid mb-3">
                 {searchedProducts(results)}
             </div>
         </div>
