@@ -5,8 +5,12 @@ import {getCategories, getFilteredProducts} from './apiCore';
 import Checkbox from './Checkbox';
 import RadioBox from './RadioBox';
 import { prices } from './fixedPrices';
+import Carousel from 'react-bootstrap/Carousel';
 
 // this is the component which will be making all the backend requests, depending upon the filters. 
+
+var img_src1 =require(`../images/Poster1.png`)
+var img_src2 =require(`../images/Poster2.png`)
 
 const Shop  = () => {
 
@@ -108,7 +112,23 @@ const Shop  = () => {
 
     return(
 
-        <Layout title = "Shop" description = "Find your sexy!" className="container-fluid">
+        <Layout title = "Shop" description = "Find what you need!" className="container-fluid">
+            <Carousel>
+            <Carousel.Item>
+                <img
+                src={img_src1}
+                alt="First Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                src={img_src2}
+                alt="Second Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            </Carousel>
 
         <div className="row">
             <div className="col-4">
