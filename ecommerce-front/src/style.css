@@ -588,3 +588,28 @@ a:active {
 .glow-green:hover{
     background-color: #eb4034;
 }
+.shop-box{
+    background-color: white;
+}
+
+.shop-box-small{
+    background-image: white;
+    margin-left: 2.5em;
+    margin-right: 1em;
+    margin-top: 3em;
+    box-shadow: 0px 3px 6px #000000AD;
+}
+
+h4{
+    background-color: #383838;
+    color: white;
+    text-align: center;
+}
+
+ul{
+    margin-left: 4em;
+}
+
+.radio-text{
+    margin-left: 3.55em;
+}

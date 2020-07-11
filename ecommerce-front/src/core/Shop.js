@@ -6,6 +6,7 @@ import Checkbox from './Checkbox';
 import RadioBox from './RadioBox';
 import { prices } from './fixedPrices';
 import Carousel from 'react-bootstrap/Carousel';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 // this is the component which will be making all the backend requests, depending upon the filters. 
 
@@ -131,7 +132,8 @@ const Shop  = () => {
             </Carousel>
 
         <div className="row">
-            <div className="col-4">
+            <div className="col-4 body-pad shop-box">
+                <div className="shop-box-small">
                 <h4>Filter by Categories</h4>
                 <ul>
                 <Checkbox 
@@ -140,12 +142,12 @@ const Shop  = () => {
                 </ul>
 
                 <h4>Filter by Price Range</h4>
-                <div>
+                <div className="radio-text">
                 <RadioBox 
                 prices={prices} 
                 handleFilters={filters => handleFilters(filters, 'price')} />
                 </div>
-
+                </div>
             </div>
 
             <div className="col-8">
