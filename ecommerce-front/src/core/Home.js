@@ -9,6 +9,7 @@ import Carousel from 'react-bootstrap/Carousel';
 var img_src =require(`../images/banner.png`)
 var img_src1 =require(`../images/Poster1.png`)
 var img_src2 =require(`../images/Poster2.png`)
+var seller_src =require(`../images/best.png`)
 
 const Home = () =>{
 
@@ -62,7 +63,6 @@ const Home = () =>{
             </Carousel.Item>
             </Carousel>
             <div class="body-pad">
-                <h2 className="mb-4"> New Arrivals </h2>
                 <div class="include-logo">
                     <div className="prod-row">
                     {productsByArrival.map((product, i) => (
@@ -76,13 +76,15 @@ const Home = () =>{
                 </div>
             <img src={img_src} class="banner" />
             <div class="body-pad">
-                <h2 className="mb-4"> Best Sellers </h2>
-                <div className="row">        
-                {productsBySell.map((product, i) => (
-                    <div key={i} className="col-3 mb-3">
-                        <Card product={product} />
+                <div class="include-logo">
+                    <div class="best-sellers"><div class="circle"><img src={seller_src} class="seller"/></div></div>
+                    <div className="prod-row">        
+                    {productsBySell.map((product, i) => (
+                        <div key={i} className="new-card">
+                            <Card product={product} />
+                        </div>
+                    ))}
                     </div>
-                ))}
                 </div>
             </div>
         </Layout>

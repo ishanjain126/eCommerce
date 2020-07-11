@@ -1,6 +1,6 @@
 @font-face {
     font-family: newArrivals;
-    src: url("./fonts/Frontage-Outline.otf");
+    src: url("./fonts/Westfalia-Regular.otf");
 }  
 
 
@@ -23,10 +23,8 @@ body{
 /* product image on cart */
 
 .product-img {
-    background-color: #000000;
-    min-height: 270px;;
+    min-height: 100px;;
 }
-
 
 .jumbotron h2{
     margin-top: -20px;
@@ -235,8 +233,8 @@ a:active{
 }
 
 .prod-row{
-    width: 90%;
     display: flex;
+    justify-content: space-between;
 }
 
 .new-card{
@@ -249,12 +247,26 @@ a:active{
     height: 100%;
 }
 
-.card-info{
+.card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.card-info{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    /* align-items: center;*/
+    text-align: center; 
+    flex-grow: 1;
+    justify-content: space-between;
+    /* align-items: end; */
+    flex-direction: column;
+    display: flex;
+    /* display: flex; */
+
 }
 
 .button-center{
@@ -313,14 +325,15 @@ a:active{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: larger;
+    font-size: xx-large;
+    color: #222222;
 }
 
 .include-logo{
     display: flex;
 }
 
-.card-text{
+/* .card-text{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: clip;
@@ -329,4 +342,27 @@ a:active{
 .poster{
     height: 17em;
     width: 80em;
+}
+    text-overflow: ellipsis;
+}
+*/
+
+.best-sellers{
+    width: 15%;
+    height: 270px;
+    font-family: newArrivals;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: xx-large;
+    color: #222222;
+}
+
+.circle{
+    width: 100%;
+}
+.seller{
+    max-width: 70%;
 }

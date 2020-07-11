@@ -18,7 +18,7 @@ const Card = ({
   const [count, setCount] = useState(product.count);
 
 
-  const showViewButton = showViewProductButton  => {
+  const showViewButton = showViewProductButton => {
     return (
       showViewProductButton && (
         <Link to={`/product/${product._id}`} className="mr-2">
@@ -51,12 +51,12 @@ const Card = ({
   const showRemoveButton = showRemoveProductButton => {
     return (
       showRemoveProductButton && (
-        <button 
-        onClick={() => {
-          removeItem(product._id);
-          setRun(!run);
-        }}
-        className="btn btn-outline-warning mt-2 mb-2 remove">
+        <button
+          onClick={() => {
+            removeItem(product._id);
+            setRun(!run);
+          }}
+          className="btn btn-outline-warning mt-2 mb-2 remove">
           Remove Product
         </button>
       )
@@ -67,30 +67,30 @@ const Card = ({
     return quantity > 0 ? (
       <span className="badge badge-primary badge-pill hover">In Stock </span>
     ) : (
-      <span className="badge badge-primary badge-pill hover">Out of Stock </span>
-    );
+        <span className="badge badge-primary badge-pill hover">Out of Stock </span>
+      );
   };
 
   const handleChange = productId => event => {
     setRun(!run)  // this will run useEffect in the parent component
     setCount(event.target.value < 1 ? 1 : event.target.value)
-    if(event.target.value >= 1){
+    if (event.target.value >= 1) {
       updateItem(productId, event.target.value)
     }
   }
 
   const showCartUpdateOptions = cartUpdate => {
-    return cartUpdate && 
-    <div className="input-group mb-3">
+    return cartUpdate &&
+      <div className="input-group mb-3">
 
-      <div className="input-group-prepend">
-        <span className="input-group-text">Adjust Quantity</span>
+        <div className="input-group-prepend">
+          <span className="input-group-text">Adjust Quantity</span>
+        </div>
+
+        {/* increment or decrement the product quantity */}
+        <input type="number" className="form-control" value={count} onChange={handleChange(product._id)} />
+
       </div>
-
-      {/* increment or decrement the product quantity */}
-      <input type="number" className="form-control" value={count} onChange={handleChange(product._id)} />
-
-    </div>
   }
 
   return (
@@ -118,25 +118,28 @@ const Card = ({
 
     //   </div>
     // </div>
-    <div>
+    <div class="card">
       {shouldRedirect(redirect)}
       {showStock(product.quantity)}
       <ShowImage item={product} url="product" />
-      <div class="card-info"></div>
-      <div className="card-info">
-        <h4 class="card-text">{product.name}</h4>
+      <div class="card-info">
+
+        <div class="card-text">{product.name}</div>
         {/* <p>{product.description.substring(0, 100)} </p> */}
-        <p class="card-price">$ {product.price}</p>
+
         {/* <p>Category: {product.category && product.category.name}</p> */}
         {/* <p>Added {moment(product.createdAt).fromNow()}</p> */}
+        <div class="card-actions">
+          <div class="card-price">$ {product.price}</div>
+
           {showViewButton(showViewProductButton)}
 
           {showAddToCartBtn(showAddToCartButton)}
 
           {showRemoveButton(showRemoveProductButton)}
 
-          {showCartUpdateOptions(cartUpdate)}
-        </div>
+          {showCartUpdateOptions(cartUpdate)}</div>
+      </div>
     </div>
   );
 };
