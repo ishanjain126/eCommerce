@@ -14,6 +14,7 @@ const Dashboard = () => {
     // destructuring
     const {user : {_id, name, email, role}} = isAuthenticated()
     const token = isAuthenticated().token
+    
     // const auth = isAuthenticated();
 
     // if (auth && auth.user) {

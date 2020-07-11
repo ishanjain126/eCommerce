@@ -57,6 +57,9 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         );
     };
  
+    // have used separate variable to store the address as data is already defined in the
+    // promise functions and cannot be used again
+
     let deliveryAddress = data.address;
  
     const buy = () => {

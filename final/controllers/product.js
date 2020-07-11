@@ -274,3 +274,31 @@ exports.listSearch = (req, res) => {
         .select('-photo')
     }
 }
+
+
+// decrease the quantity of the products purchased in the database
+
+exports.decreaseQuantity = (req, res, next) => {
+
+    // map through each product getting into order body
+    // decrement the count and increase the sold
+
+    let bulkOps = req.body.order.products.map(item => {
+        return {
+            updateOne: {
+                filter: { _id: item._id },
+                update: { $inc: { quantity: -item.count, sold: +item.count } }
+            }
+        };
+    });
+
+    Product.bulkWrite(bulkOps, {}, (error, products) => {
+        if (error) {
+            return res.status(400).json({
+                error: 'Could not update product'
+            });
+        }
+        
+        next();
+    });
+};
