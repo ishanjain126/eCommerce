@@ -4,6 +4,9 @@ import { getProducts } from './apiCore'
 import Card from './Card';
 import Search from './Search'
 
+
+var img_src =require(`../images/banner.png`)
+
 const Home = () =>{
 
     const [productsBySell, setProductsBySell] = useState([])
@@ -39,28 +42,30 @@ const Home = () =>{
 
     return (
         <Layout title = "Home Page" description = "Undecided" className="container-fluid">
-
-            <Search />
-            <h2 className="mb-4"> New Arrivals </h2>
-            <div className="row">
-            {productsByArrival.map((product, i) => (
-                <div key={i} className="col-3 mb-3">
-                    <Card product={product} />
+            <div class="body-pad">
+                <h2 className="mb-4"> New Arrivals </h2>
+                <div class="include-logo">
+                    <div className="prod-row">
+                    {productsByArrival.map((product, i) => (
+                        <div key={i} className="new-card">
+                            <Card product={product} />
+                        </div>
+                    ))}
+                    </div>
+                    <div class="new-arrivals"></div>
+                    </div>
                 </div>
-            ))}
-            
-            </div>
-            <hr />
-            <h2 className="mb-4"> Best Sellers </h2>
-            <div className="row">        
-            {productsBySell.map((product, i) => (
-                <div key={i} className="col-3 mb-3">
-                    <Card product={product} />
+            <img src={img_src} class="banner" />
+            <div class="body-pad">
+                <h2 className="mb-4"> Best Sellers </h2>
+                <div className="row">        
+                {productsBySell.map((product, i) => (
+                    <div key={i} className="col-3 mb-3">
+                        <Card product={product} />
+                    </div>
+                ))}
                 </div>
-            ))}
             </div>
-
-
         </Layout>
     );
 };

@@ -22,7 +22,7 @@ const Card = ({
     return (
       showViewProductButton && (
         <Link to={`/product/${product._id}`} className="mr-2">
-          <button className="btn btn-outline-primary mt-2 mb-2 card-btn-1">View Product</button>
+          <button className="btn btn-outline-primary mt-2 mb-2 card-btn-1 view">View Product</button>
         </Link>
       )
     );
@@ -41,8 +41,8 @@ const Card = ({
   const showAddToCartBtn = showAddToCartButton => {
     return (
       showAddToCartButton && (
-        <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2 card-btn-1  ">
-          Add to cart
+        <button onClick={addToCart} className="btn btn-outline-warning mt-2 mb-2 card-btn-1 add">
+          +
         </button>
       )
     );
@@ -56,7 +56,7 @@ const Card = ({
           removeItem(product._id);
           setRun(!run);
         }}
-        className="btn btn-outline-warning mt-2 mb-2">
+        className="btn btn-outline-warning mt-2 mb-2 remove">
           Remove Product
         </button>
       )
@@ -65,9 +65,9 @@ const Card = ({
 
   const showStock = quantity => {
     return quantity > 0 ? (
-      <span className="badge badge-primary badge-pill">In Stock </span>
+      <span className="badge badge-primary badge-pill hover">In Stock </span>
     ) : (
-      <span className="badge badge-primary badge-pill">Out of Stock </span>
+      <span className="badge badge-primary badge-pill hover">Out of Stock </span>
     );
   };
 
@@ -94,29 +94,49 @@ const Card = ({
   }
 
   return (
-    <div className="card ">
-      <div className="card-header card-header-1 ">{product.name}</div>
-      <div className="card-body">
-        {shouldRedirect(redirect)}
-        <ShowImage item={product} url="product" />
-        <p className="card-p  mt-2">{product.description.substring(0, 100)} </p>
-        <p className="card-p black-10">$ {product.price}</p>
-        <p className="black-9">Category: {product.category && product.category.name}</p>
-        <p className="black-8">Added {moment(product.createdAt).fromNow()}</p>
-        {showStock(product.quantity)}
-        <br />
+    // <div className="card">
+    //   <div className="card-header card-header-1 ">{product.name}</div>
+    //   <div className="card-body">
+    //     {shouldRedirect(redirect)}
+    //     <ShowImage item={product} url="product" />
+    //     <p className="card-p  mt-2">{product.description.substring(0, 100)} </p>
+    //     <p className="card-p black-10">$ {product.price}</p>
+    //     <p className="black-9">Category: {product.category && product.category.name}</p>
+    //     <p className="black-8">Added {moment(product.createdAt).fromNow()}</p>
+    //     {showStock(product.quantity)}
+    //     <br />
 
-        {showViewButton(showViewProductButton)}
+    //     {showViewButton(showViewProductButton)}
 
-        {showAddToCartBtn(showAddToCartButton)}
+    //     {showAddToCartBtn(showAddToCartButton)}
 
-        {showRemoveButton(showRemoveProductButton)}
+    //     {showRemoveButton(showRemoveProductButton)}
 
-        {showCartUpdateOptions(cartUpdate)}
+    //     {showCartUpdateOptions(cartUpdate)}
 
 
 
-      </div>
+    //   </div>
+    // </div>
+    <div>
+      {shouldRedirect(redirect)}
+      {showStock(product.quantity)}
+      <ShowImage item={product} url="product" />
+      <div class="card-info"></div>
+      <div className="card-info">
+        <h4>{product.name}</h4>
+        {/* <p>{product.description.substring(0, 100)} </p> */}
+        <p class="card-price">$ {product.price}</p>
+        {/* <p>Category: {product.category && product.category.name}</p> */}
+        {/* <p>Added {moment(product.createdAt).fromNow()}</p> */}
+          {showViewButton(showViewProductButton)}
+
+          {showAddToCartBtn(showAddToCartButton)}
+
+          {showRemoveButton(showRemoveProductButton)}
+
+          {showCartUpdateOptions(cartUpdate)}
+        </div>
     </div>
   );
 };
