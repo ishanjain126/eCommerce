@@ -3,6 +3,7 @@ import Layout from './Layout';
 import { getProducts } from './apiCore'
 import Card from './Card';
 import Search from './Search'
+import Footer from './footer'
 
 
 var img_src =require(`../images/banner.png`)
@@ -72,6 +73,7 @@ const Home = () =>{
                     </div>
                 </div>
             </div>
+            <Footer />
         </Layout>
     );
 };
