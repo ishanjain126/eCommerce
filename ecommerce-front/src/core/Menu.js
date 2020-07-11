@@ -86,8 +86,8 @@ const Menu = ({ history }) => {
     <div id="menu" class="nav-row">
         <div class="nav-blocks home"><Link style={isActive(history, '/')} to="/"><i>U</i></Link></div>
         <Search />
-        <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/')} to="/shop">Shop</Link></div>
-        <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/')} to="/cart">Cart <sup><small className="cart-badge">{itemTotal()}</small></sup></Link></div>
+        <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/shop')} to="/shop">Shop</Link></div>
+        <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/cart')} to="/cart">Cart <sup><small className="cart-badge">{itemTotal()}</small></sup></Link></div>
         {auth && auth.user && auth.user.role === 0 && (
             <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/user/dashboard')} to="/user/dashboard">Dashboard</Link></div>
         )}

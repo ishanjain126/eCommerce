@@ -312,7 +312,7 @@ a:active{
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     color: #222222;
 }
 
@@ -324,4 +324,24 @@ a:active{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.best-sellers{
+    width: 15%;
+    height: 270px;
+    font-family: newArrivals;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: xx-large;
+    color: #222222;
+}
+
+.circle{
+    width: 100%;
+}
+.seller{
+    max-width: 70%;
 }
