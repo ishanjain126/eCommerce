@@ -67,7 +67,7 @@ export const getCategories = () => {
 
 
 export const getProducts = () => {
-    return fetch(`${API}/products`, {
+    return fetch(`${API}/products?limit=undefined`, {
         method: "GET"
     })
     .then(response => {
@@ -100,7 +100,7 @@ export const deleteProduct = (productId, userId, token) => {
 
 
 export const getProduct = (productId) => {
-    return fetch(`${API}/products/${productId}`, {
+    return fetch(`${API}/product/${productId}`, {
         method: "GET"
     })
     .then(response => {
@@ -112,23 +112,18 @@ export const getProduct = (productId) => {
 
 
 export const updateProduct = (productId, userId, token, product) => {
-
-    return(fetch(`${API}/product/${productId}/${userId}`, {
-        method: "PUT",
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method: 'PUT',
         headers: {
             Accept: 'application/json',
-            Authorization:  `Bearer ${token}` 
+            Authorization: `Bearer ${token}`
         },
         body: product
     })
-
-    .then(response => {
-        return response.json(); 
-    })
-    .catch(err => {
-        console.log(err);
-    })
-    )
-};
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+}
 
 
