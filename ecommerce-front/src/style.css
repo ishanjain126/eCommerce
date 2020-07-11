@@ -325,3 +325,8 @@ a:active{
     overflow: hidden;
     text-overflow: clip;
 }
+
+.poster{
+    height: 17em;
+    width: 80em;
+}

@@ -2,10 +2,13 @@ import React, {useState, useEffect} from 'react';
 import Layout from './Layout';
 import { getProducts } from './apiCore'
 import Card from './Card';
-import Search from './Search'
+import Search from './Search';
+import Carousel from 'react-bootstrap/Carousel';
 
 
 var img_src =require(`../images/banner.png`)
+var img_src1 =require(`../images/Poster1.png`)
+var img_src2 =require(`../images/Poster2.png`)
 
 const Home = () =>{
 
@@ -42,6 +45,22 @@ const Home = () =>{
 
     return (
         <Layout title = "Home Page" description = "Undecided" className="container-fluid">
+            <Carousel>
+            <Carousel.Item>
+                <img
+                src={img_src1}
+                alt="First Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                src={img_src2}
+                alt="Second Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            </Carousel>
             <div class="body-pad">
                 <h2 className="mb-4"> New Arrivals </h2>
                 <div class="include-logo">
