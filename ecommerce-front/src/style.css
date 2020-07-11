@@ -334,12 +334,17 @@ a:active{
     display: flex;
 }
 
-/* .card-text{
+.card-text{
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
 }
-*/
+
+.poster{
+    height: 17em;
+    width: 100%;
+}
+
 
 .best-sellers{
     width: 17.5%;
