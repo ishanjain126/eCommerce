@@ -21,20 +21,20 @@ const Dashboard = () => {
 
 
     // require the user id and token, as 
-    // const init = (userId, token) => {
-    //     getPurchaseHistory(userId, token).then(data => {
-    //         if(data.error){
-    //             console.log(data.error)
-    //         }
-    //         else{
-    //             setHistory(data)
-    //         }
-    //     })
-    // }
+    const init = (userId, token) => {
+        getPurchaseHistory(userId, token).then(data => {
+            if(data.error){
+                console.log(data.error)
+            }
+            else{
+                setHistory(data)
+            }
+        })
+    }
 
-    // useEffect(() => {
-    //     init(_id, token)
-    // })
+    useEffect(() => {
+        init(_id, token)
+    })
 
     const userLinks = () => {
         return (
@@ -68,12 +68,34 @@ const Dashboard = () => {
     }
 
     const purchaseHistory = () => {
+        const rows = [];
+        history.forEach(record => {
+            const products = record.products.map(p => `${p.name}, `);
+            rows.push(
+                <tr>
+                    <td>{record.createdAt.split('T')[0]} | </td>
+                    <td>{products} | </td>
+                    <td>{record.amount} | </td>
+                    <td>{record.status} | </td>
+                </tr>
+            );                         
+        });
         return(
         <div className="card mb-5">
             <h3 className="card-header">Purchase History</h3>
             <ul className="list-group">
                 <li className="list-group-item">
-                    {JSON.stringify(history)}
+                    <table>
+                        <thead>
+                            <td><strong>Date</strong></td>
+                            <td><strong>Products</strong></td>
+                            <td><strong>Amount</strong></td>
+                            <td><strong>Status</strong></td>
+                        </thead>
+                        <tbody>
+                            {rows}
+                        </tbody>
+                    </table>
                 </li>
             </ul>                
         </div>
