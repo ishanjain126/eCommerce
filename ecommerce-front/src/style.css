@@ -23,8 +23,7 @@ body{
 /* product image on cart */
 
 .product-img {
-    background-color: #000000;
-    min-height: 270px;;
+    min-height: 100px;;
 }
 
 
