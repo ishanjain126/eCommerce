@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 const AdminDashboard = () => {
 
     // destructuring
-    const {user : {_id, name, email, role}} = isAuthenticated()
+    const {user : {name, email, role} } = isAuthenticated()
 
     const adminLinks = () => {
         return (
@@ -19,6 +19,9 @@ const AdminDashboard = () => {
                     </li>
                     <li className="list-group-item">
                         <Link className="nav-link" to="/create/product">Create Product</Link>
+                    </li>
+                    <li className="list-group-item">
+                        <Link className="nav-link" to="/admin/products">Manage Products</Link>
                     </li>
                 </ul>
             </div>

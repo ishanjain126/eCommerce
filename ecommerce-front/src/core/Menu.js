@@ -49,6 +49,14 @@ const Menu = ({ history }) => {
             </li>
             )}
 
+            {auth && auth.user && auth.user.role === 1 && (
+                <li className="nav-item">
+                <Link className="nav-link" style={isActive(history, '/admin/dashboard')} to="/admin/dashboard">
+                    Dashboard
+                </Link>
+            </li>
+            )}
+
             {!auth && (
                 <Fragment>
                     <li className="nav-item">

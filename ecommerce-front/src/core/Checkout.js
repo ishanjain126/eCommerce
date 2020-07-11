@@ -4,9 +4,9 @@ import { emptyCart } from './cartHelpers';
 import Card from './Card';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
-import "braintree-web";
+import "braintree-web"; // not using this package
 import DropIn from 'braintree-web-drop-in-react';
-
+ 
 const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     const [data, setData] = useState({
         loading: false,
@@ -16,10 +16,10 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         instance: {},
         address: ''
     });
-
+ 
     const userId = isAuthenticated() && isAuthenticated().user._id;
     const token = isAuthenticated() && isAuthenticated().token;
-
+ 
     const getToken = (userId, token) => {
         getBraintreeClientToken(userId, token).then(data => {
             if (data.error) {
@@ -32,23 +32,21 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         })
         .catch((err) => {console.error(err)});
     };
-
+ 
     useEffect(() => {
         getToken(userId, token);
     }, []);
-
-
-    // handling the address : grab the address from the user when they make the purchase
+ 
     const handleAddress = event => {
         setData({ ...data, address: event.target.value });
     };
-
+ 
     const getTotal = () => {
         return products.reduce((currentValue, nextValue) => {
             return currentValue + nextValue.count * nextValue.price;
         }, 0);
     };
-
+ 
     const showCheckout = () => {
         return isAuthenticated() ? (
             <div>{showDropIn()}</div>
@@ -58,9 +56,9 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             </Link>
         );
     };
-
+ 
     let deliveryAddress = data.address;
-
+ 
     const buy = () => {
         setData({ loading: true });
         // send the nonce to your server
@@ -71,7 +69,6 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             .then(data => {
                 // console.log(data);
                 nonce = data.nonce;
-
                 // once you have nonce (card type, card number) send nonce as 'paymentMethodNonce'
                 // and also total to be charged
 
@@ -79,47 +76,36 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                     paymentMethodNonce: nonce,
                     amount: getTotal(products)
                 };
-
+ 
                 processPayment(userId, token, paymentData)
                     .then(response => {
                         console.log(response);
 
-                        // empty cart is created after sending order information to the backend for the 
-                        // future references.
+                        // empty cart
                         // create order
-
+ 
                         const createOrderData = {
                             products: products,
-                            transaction_id: response.transaction_id,
+                            transaction_id: response.transaction.id,
                             amount: response.transaction.amount,
                             address: deliveryAddress
                         };
-
-                        // createOrder (userId, token, createOrderData) = {
-                        //     // 
-                        // }
-
-                        setData({...data, success:response.success})
-                        emptyCart(() => {
-                            console.log("payment success and empty cart")
-                            setData({loading:false})
-                        });
-
-                        // createOrder(userId, token, createOrderData)
-                        //     .then(response => {
-                        //         emptyCart(() => {
-                        //             setRun(!run); // run useEffect in parent Cart
-                        //             console.log('payment success and empty cart');
-                        //             setData({
-                        //                 loading: false,
-                        //                 success: true
-                        //             });
-                        //         });
-                        //     })
-                        //     .catch(error => {
-                        //         console.log(error);
-                        //         setData({ loading: false });
-                        //     });
+ 
+                        createOrder(userId, token, createOrderData)
+                            .then(response => {
+                                emptyCart(() => {
+                                    setRun(!run); // run useEffect in parent Cart
+                                    console.log('payment success and empty cart');
+                                    setData({
+                                        loading: false,
+                                        success: true
+                                    });
+                                });
+                            })
+                            .catch(error => {
+                                console.log(error);
+                                setData({ loading: false });
+                            });
                     })
                     .catch(error => {
                         console.log(error);
@@ -131,9 +117,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                 setData({ ...data, error: error.message });
             });
     };
-
-
-
+ 
     const showDropIn = () => (
         <div onBlur={() => setData({ ...data, error: '' })}>
             {data.clientToken !== null && products.length > 0 ? (
@@ -147,7 +131,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                             placeholder="Type your delivery address here..."
                         />
                     </div>
-
+ 
                     <DropIn
                         options={{
                             authorization: data.clientToken,
@@ -164,21 +148,21 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
             ) : null}
         </div>
     );
-
+ 
     const showError = error => (
         <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
             {error}
         </div>
     );
-
-    const showSuccess = success => (
+ 
+    const showSuccess = success => ( 
         <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
             Thanks! Your payment was successful!
         </div>
     );
-
+ 
     const showLoading = loading => loading && <h2 className="text-danger">Loading...</h2>;
-
+ 
     return (
         <div>
             <h2>Total: ${getTotal()}</h2>
@@ -189,5 +173,5 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         </div>
     );
 };
-
+ 
 export default Checkout;
