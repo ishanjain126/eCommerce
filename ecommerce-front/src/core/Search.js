@@ -25,7 +25,7 @@ const Search = () => {
             else{
                 setData({...data, categories: data});
             }
-        })
+        }).catch((err) => {console.error(err)})
     }
 
     useEffect(() => {
@@ -43,7 +43,7 @@ const Search = () => {
                         setData({ ...data, results: response, searched: true });
                     }
                 }
-            );
+            ).catch((err) => {console.error(err)});
         }
     };
 
