@@ -129,7 +129,7 @@ const Card = ({
         {/*<p>Category: {product.category && product.category.name}</p>*/}
         {/*<p>Added {moment(product.createdAt).fromNow()}</p>*/}
         <div class="card-actions">
-          <div class="card-price">$ {product.price}</div>
+          <div class="card-price">₹ {product.price}</div>
 
           {showViewButton(showViewProductButton)}
 
