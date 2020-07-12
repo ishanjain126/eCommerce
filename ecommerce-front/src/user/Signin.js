@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Layout from '../core/Layout';
 import {Redirect} from 'react-router-dom'
 import { signin, authenticate, isAuthenticated } from '../auth'   
+var loginback = require(`../images/login.jpg`)
 
 
 const Signin = () => 
@@ -45,25 +46,31 @@ const Signin = () =>
     };
 
     const signInForm = () => (
-        <form>
-                
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange('email')} type="email" className="form-control" value={email}/>
-                
+    <div class="login-back">
+        <div class="form-container">
+            <h1>UNDECIDED</h1>
+            <div class="form-size">
+                <form id="login-form">
+                    <div className="form-group">
+                        <label>Email</label>
+                        <input onChange={handleChange('email')} type="email" className="form-control" value={email}/>
+                        
+                    </div>
+
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input onChange={handleChange('password')} type="password" className="form-control" value={password}/>
+                        
+                    </div>
+
+                    <button onClick={clickSubmit} className="btn btn-primary glow">
+                        Submit
+                    </button>
+
+                </form>
             </div>
-
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={handleChange('password')} type="password" className="form-control" value={password}/>
-                
-            </div>
-
-            <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
-            </button>
-
-        </form>
+        </div>
+    </div>
     );
 
     const showError = () => (
@@ -91,13 +98,13 @@ const Signin = () =>
     }    
 
     return(
-    <Layout 
+    <Layout
     title="Sign In Page" 
     description="Sign IN to Undecided"
-    className="container col-md-8 offset-md-2">
+    className="container-fluid">
         {showLoading()}
-        {showError()}
         {signInForm()}
+        {showError()}
         {redirectUser()}
 
     </Layout>  

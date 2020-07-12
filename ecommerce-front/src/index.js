@@ -8,6 +8,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Routes />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementsByTagName('body')[0]
 );
 

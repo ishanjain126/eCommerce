@@ -43,31 +43,40 @@ const Signup = () =>
     };
 
     const signUpForm = () => (
-        <form>
-            <div className="form-group">
-                <label className="text-muted">Name</label>
-                <input onChange={handleChange('name')} type="text" className="form-control" value={name}/>
-                
+        <div class="signup-back">
+            <div class="form-container">
+                <h1>UNDECIDED</h1>
+                <div class="form-size">
+                    <form id="signup-form">
+                        <div className="form-group">
+                            <label className="text-muted">Name</label>
+                            <input onChange={handleChange('name')} type="text" className="form-control" value={name}/>
+                            
 
+                        </div>
+
+                        <div className="form-group">
+                            <label className="text-muted">Email</label>
+                            <input onChange={handleChange('email')} type="email" className="form-control" value={email}/>
+                            
+                        </div>
+
+                        <div className="form-group">
+                            <label className="text-muted">Password</label>
+                            <input onChange={handleChange('password')} type="password" className="form-control" value={password}/>
+                            
+                        </div>
+
+                        <button onClick={clickSubmit} className="btn btn-primary glow-green">
+                            Submit
+                        </button>
+
+                    </form>
+                    {showError()}
+
+                </div>
             </div>
-
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange('email')} type="email" className="form-control" value={email}/>
-                
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={handleChange('password')} type="password" className="form-control" value={password}/>
-                
-            </div>
-
-            <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
-            </button>
-
-        </form>
+        </div>
     );
 
     const showError = () => (
@@ -86,9 +95,8 @@ const Signup = () =>
     <Layout 
     title="Signup Page" 
     description="Signup to Undecided"
-    className="container col-md-8 offset-md-2">
+    className="container-fluid">
         {showSuccess()}
-        {showError()}
         {signUpForm()}
 
     </Layout>  

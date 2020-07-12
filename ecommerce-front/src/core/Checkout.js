@@ -167,8 +167,8 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     const showLoading = loading => loading && <h2 className="text-danger">Loading...</h2>;
  
     return (
-        <div>
-            <h2>Total: ${getTotal()}</h2>
+        <div id="summary-content">
+            <h4>Total: ${getTotal()}</h4>
             {showLoading(data.loading)}
             {showSuccess(data.success)}
             {showError(data.error)}

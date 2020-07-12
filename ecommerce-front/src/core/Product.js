@@ -18,15 +18,15 @@ const Product = props => {
                 // only after getting the single product we can fetch the related products
 
                 listRelated(data._id).then(data => {
-                    if(data.error){
+                    if (data.error) {
                         setError(data.error);
                     }
-                    else{
+                    else {
                         setRelatedProduct(data);
                     }
-                }).catch((err) => {console.error(err)});
+                }).catch((err) => { console.error(err) });
             }
-        }).catch((err) => {console.error(err)});
+        }).catch((err) => { console.error(err) });
     };
 
     // First argument to useEffect
@@ -45,6 +45,8 @@ const Product = props => {
             description={product && product.description && product.description.substring(0, 100)}
             className="container-fluid"
         >
+            <div class="menu-background"></div>
+
             <div className="row">
 
                 <div className="col-8">

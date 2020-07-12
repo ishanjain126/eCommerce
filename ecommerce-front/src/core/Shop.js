@@ -5,8 +5,12 @@ import {getCategories, getFilteredProducts} from './apiCore';
 import Checkbox from './Checkbox';
 import RadioBox from './RadioBox';
 import { prices } from './fixedPrices';
+import Carousel from 'react-bootstrap/Carousel';
 
 // this is the component which will be making all the backend requests, depending upon the filters. 
+
+var img_src1 =require(`../images/Poster1.png`)
+var img_src2 =require(`../images/Poster2.png`)
 
 const Shop  = () => {
 
@@ -108,27 +112,48 @@ const Shop  = () => {
 
     return(
 
-        <Layout title = "Shop" description = "Find your sexy!" className="container-fluid">
+        <Layout title = "Shop" description = "Find what you need!" className="container-fluid">
+            <div class="menu-background"></div>
+            <Carousel>
+            <Carousel.Item>
+                <img
+                src={img_src1}
+                alt="First Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                src={img_src2}
+                alt="Second Poster"
+                className = "poster"
+                />
+            </Carousel.Item>
+            </Carousel>
 
         <div className="row">
-            <div className="col-4">
+            <div className="col-3 shop-box">
+                <div className="sticky-div">
+                <div className="shop-box-small">
                 <h4>Filter by Categories</h4>
                 <ul>
                 <Checkbox 
                 categories={categories} 
                 handleFilters={filters => handleFilters(filters, 'category')} />
                 </ul>
-
+                </div>
+                <div className="shop-box-small">
                 <h4>Filter by Price Range</h4>
-                <div>
+                <div className="radio-text">
                 <RadioBox 
                 prices={prices} 
                 handleFilters={filters => handleFilters(filters, 'price')} />
                 </div>
-
+                </div>
+                </div>
             </div>
 
-            <div className="col-8">
+            <div className="col-9">
                <h2 className="mb-4">Products</h2>
                <div className="row">
                    {filteredResults.map((product, i) => (
