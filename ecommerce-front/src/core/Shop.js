@@ -133,6 +133,7 @@ const Shop  = () => {
 
         <div className="row">
             <div className="col-3 shop-box">
+                <div className="sticky-div">
                 <div className="shop-box-small">
                 <h4>Filter by Categories</h4>
                 <ul>
@@ -147,6 +148,7 @@ const Shop  = () => {
                 <RadioBox 
                 prices={prices} 
                 handleFilters={filters => handleFilters(filters, 'price')} />
+                </div>
                 </div>
                 </div>
             </div>
