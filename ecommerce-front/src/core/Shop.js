@@ -113,6 +113,7 @@ const Shop  = () => {
     return(
 
         <Layout title = "Shop" description = "Find what you need!" className="container-fluid">
+            <div class="menu-background"></div>
             <Carousel>
             <Carousel.Item>
                 <img
@@ -131,7 +132,7 @@ const Shop  = () => {
             </Carousel>
 
         <div className="row">
-            <div className="col-4 body-pad shop-box">
+            <div className="col-3 shop-box">
                 <div className="shop-box-small">
                 <h4>Filter by Categories</h4>
                 <ul>
@@ -139,7 +140,8 @@ const Shop  = () => {
                 categories={categories} 
                 handleFilters={filters => handleFilters(filters, 'category')} />
                 </ul>
-
+                </div>
+                <div className="shop-box-small">
                 <h4>Filter by Price Range</h4>
                 <div className="radio-text">
                 <RadioBox 
@@ -149,7 +151,7 @@ const Shop  = () => {
                 </div>
             </div>
 
-            <div className="col-8">
+            <div className="col-9">
                <h2 className="mb-4">Products</h2>
                <div className="row">
                    {filteredResults.map((product, i) => (

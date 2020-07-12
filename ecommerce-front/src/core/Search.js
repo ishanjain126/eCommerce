@@ -65,19 +65,19 @@ const Search = () => {
         }
     }
 
-
+    
     // mapping through each result and displaying them in the cart. Also displaying the message
     const searchedProducts = (results = []) => {
        return ( 
 
         <div>
-            <h6 className="mt-4 mb-4">
+            <div className="search-res">
                 {searchMessage(searched, results)}
-            </h6>
+            </div>
 
-       <div className="row">
+       <div className="prod-row">
            {results.map((product, i) => (
-               <div key={i} className="col-3 mb-3">
+               <div key={i} className="new-card body-pad">
                     <Card  product={product} />
                 </div>
            ))}

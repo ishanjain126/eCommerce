@@ -13,6 +13,11 @@
     src: url("./fonts/Roboto-Thin.ttf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+
+
+
 body {
     background: rgb(255, 255, 255);
     overflow-x: hidden;
@@ -246,6 +251,7 @@ body {
     background-color: rgb(226, 226, 226);
     box-shadow: 0px 3px 6px #000000AD;
     border-radius: 5px;
+    margin-top: 1%;
 }
 
 a:active {
@@ -588,28 +594,31 @@ a:active {
 .glow-green:hover{
     background-color: #eb4034;
 }
+
 .shop-box{
     background-color: white;
 }
 
 .shop-box-small{
     background-image: white;
-    margin-left: 2.5em;
-    margin-right: 1em;
+    margin-left: 2em;
     margin-top: 3em;
-    box-shadow: 0px 3px 6px #000000AD;
+    box-shadow: 0px 3px 6px #00000050;
+    border-radius: 5px;
+    padding: 2%;
 }
 
 h4{
-    background-color: #383838;
-    color: white;
-    text-align: center;
+    color:#383838;
+    margin-left: 6%;
+    padding-bottom: 1%;
 }
 
 ul{
-    margin-left: 4em;
+    margin-left: 1em;
 }
 
 .radio-text{
-    margin-left: 3.55em;
+    margin-left: 1em;
 }
+
