@@ -16,6 +16,8 @@ const isActive = (history, path) => {
 };
 
 
+
+
 const Menu = ({ history }) => {
     const auth = isAuthenticated();
     return (
@@ -61,6 +63,7 @@ const Menu = ({ history }) => {
 
                 )}
             </div>
+
         </div>
 
     );
