@@ -48,7 +48,7 @@ const Product = props => {
             <div className="row">
 
                 <div className="col-8">
-                    {product && product.description && <Card product={product} showViewProductButton={false} />}
+                    {product && product.description && <Card product={product} showViewProductButton={false} showDesc={true} />}
                 </div>
 
                 <div className="col-4">
