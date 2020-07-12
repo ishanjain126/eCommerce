@@ -43,7 +43,7 @@ const Menu = ({ history }) => {
                         <div className="nav-blocks">
                             <Link className="nav-link" style={isActive(history, '/signup')} to="/signup">
                                 Signup
-                    </Link>
+                            </Link>
                         </div>
                     </Fragment>
                 )}
