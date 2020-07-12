@@ -103,8 +103,8 @@ const Signin = () =>
     description="Sign IN to Undecided"
     className="container-fluid">
         {showLoading()}
-        {showError()}
         {signInForm()}
+        {showError()}
         {redirectUser()}
 
     </Layout>  

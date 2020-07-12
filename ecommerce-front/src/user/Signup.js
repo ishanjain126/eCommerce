@@ -72,6 +72,8 @@ const Signup = () =>
                         </button>
 
                     </form>
+                    {showError()}
+
                 </div>
             </div>
         </div>
@@ -95,7 +97,6 @@ const Signup = () =>
     description="Signup to Undecided"
     className="container-fluid">
         {showSuccess()}
-        {showError()}
         {signUpForm()}
 
     </Layout>  
