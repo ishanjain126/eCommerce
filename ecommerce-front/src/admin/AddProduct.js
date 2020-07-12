@@ -43,16 +43,16 @@ const AddProduct = () => {
     // populate the category and make the form data ready for the usage.
     const init = () => {
         getCategories()
-        .then(data => {
-            if(data.error){
-                setValues({...values, error:data.error})
-            }
-            else{
-                setValues({...values, categories: data, formData: new FormData()})
-            }
-        })
+            .then(data => {
+                if (data.error) {
+                    setValues({ ...values, error: data.error })
+                }
+                else {
+                    setValues({ ...values, categories: data, formData: new FormData() })
+                }
+            })
     }
-    
+
     // this method runs when the component mounts and the value changes. This is the replacement to the 
     // lifecycle components that we used to use in the class components
     // as soon as the value changes then the form data also gets updated and is send to the backend with the help of the useEffect function
@@ -63,32 +63,32 @@ const AddProduct = () => {
     const handleChange = name => event => {
         const value = name === 'photo' ? event.target.files[0] : event.target.value
         formData.set(name, value)
-        setValues({...values, [name]: value})
+        setValues({ ...values, [name]: value })
     }
 
     const clickSubmit = (event) => {
         event.preventDefault()
-        setValues({...values, error: '', loading:true})
+        setValues({ ...values, error: '', loading: true })
 
         createProduct(user._id, token, formData)
-        .then(data => {
-            if(data.error){
-                setValues({...values, error: data.error})
-            }
-            else{
-                setValues({
-                    ...values, 
-                    name: ' ',
-                    description: ' ',
-                    price: ' ',
-                    quantity: ' ',
-                    photo: ' ',
-                    loading:false,
-                    error: ' ',
-                    createdProduct: data.name                 
-                });
-            }
-        });
+            .then(data => {
+                if (data.error) {
+                    setValues({ ...values, error: data.error })
+                }
+                else {
+                    setValues({
+                        ...values,
+                        name: ' ',
+                        description: ' ',
+                        price: ' ',
+                        quantity: ' ',
+                        photo: ' ',
+                        loading: false,
+                        error: ' ',
+                        createdProduct: data.name
+                    });
+                }
+            });
     };
 
     const newPostForm = () => (
@@ -96,7 +96,7 @@ const AddProduct = () => {
             <h4>Post Photo</h4>
             <div className="form-group">
                 <label className="btn btn-secondary">
-                <input onChange={handleChange('photo')}  type="file" name="photo" accept="image/*" />
+                    <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
                 </label>
             </div>
 
@@ -144,7 +144,7 @@ const AddProduct = () => {
 
         </form>
     );
-    
+
     const showError = () => (
         <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
             {error}
@@ -167,8 +167,8 @@ const AddProduct = () => {
 
     return (
         <Layout title="Add new Product" description={`Hello, ${user.name}!, ready to add a new product?`}>
-            
-            <div className="row">  
+            <div class="menu-background"></div>
+            <div className="row">
 
                 <div className="col-md-8 offset-md-2">
                     {showLoading()}
@@ -180,6 +180,7 @@ const AddProduct = () => {
             </div>
 
         </Layout>
+
     );
 
 };
