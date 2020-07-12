@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 import { signout, isAuthenticated } from '../auth';
 import { itemTotal } from './cartHelpers';
 import Search from './Search';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 var img_src1 = require(`../images/favicon.png`);
 
@@ -26,7 +28,7 @@ const Menu = ({ history }) => {
                 <div class="nav-blocks home"><Link style={isActive(history, '/')} to="/"><img className="home_img" src={img_src1} /></Link></div>
                 <Search />
                 <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/shop')} to="/shop">Shop</Link></div>
-                <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/cart')} to="/cart">Cart <sup><small className="cart-badge">{itemTotal()}</small></sup></Link></div>
+                <div class="nav-blocks cart-set"><Link className="nav-link" style={isActive(history, '/cart')} to="/cart"><div className="cart-badge">{itemTotal()}</div><FontAwesomeIcon icon={faShoppingCart} className="card-icon"></FontAwesomeIcon></Link></div>
                 {auth && auth.user && auth.user.role === 0 && (
                     <div class="nav-blocks"><Link className="nav-link" style={isActive(history, '/user/dashboard')} to="/user/dashboard">Dashboard</Link></div>
                 )}
@@ -43,6 +45,7 @@ const Menu = ({ history }) => {
                         </div>
 
                         <div className="nav-blocks">
+
                             <Link className="nav-link" style={isActive(history, '/signup')} to="/signup">
                                 Signup
                             </Link>
@@ -52,7 +55,7 @@ const Menu = ({ history }) => {
 
                 {auth && (
                     <div id="signout" className="nav-blocks">
-                        <span
+                        <span id="signout-span"
                             style={{ cursor: 'pointer', color: "#ffffff" }}
                             onClick={() => signout(() => {
                                 history.push('/');
