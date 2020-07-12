@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
-import {isAuthenticated} from '../auth'
-import {Link} from 'react-router-dom'
-import {getPurchaseHistory} from './apiUser'
+import { isAuthenticated } from '../auth'
+import { Link } from 'react-router-dom'
+import { getPurchaseHistory } from './apiUser'
 
 
 const Dashboard = () => {
@@ -12,9 +12,9 @@ const Dashboard = () => {
 
 
     // destructuring
-    const {user : {_id, name, email, role}} = isAuthenticated()
+    const { user: { _id, name, email, role } } = isAuthenticated()
     const token = isAuthenticated().token
-    
+
     // const auth = isAuthenticated();
 
     // if (auth && auth.user) {
@@ -24,10 +24,10 @@ const Dashboard = () => {
     // require the user id and token, as 
     const init = (userId, token) => {
         getPurchaseHistory(userId, token).then(data => {
-            if(data.error){
+            if (data.error) {
                 console.log(data.error)
             }
-            else{
+            else {
                 setHistory(data)
             }
         })
@@ -64,7 +64,7 @@ const Dashboard = () => {
                     <li className="list-group-item">{email}</li>
                     <li className="list-group-item">{role === 1 ? 'Admin' : 'Registered User'}</li>
                 </ul>
-            </div>            
+            </div>
         )
     }
 
@@ -79,38 +79,39 @@ const Dashboard = () => {
                     <td>{record.amount} | </td>
                     <td>{record.status} | </td>
                 </tr>
-            );                         
+            );
         });
-        return(
-        <div className="card mb-5">
-            <h3 className="card-header">Purchase History</h3>
-            <ul className="list-group">
-                <li className="list-group-item">
-                    <table>
-                        <thead>
-                            <td><strong>Date</strong></td>
-                            <td><strong>Products</strong></td>
-                            <td><strong>Amount</strong></td>
-                            <td><strong>Status</strong></td>
-                        </thead>
-                        <tbody>
-                            {rows}
-                        </tbody>
-                    </table>
-                </li>
-            </ul>                
-        </div>
+        return (
+            <div className="card mb-5">
+                <h3 className="card-header">Purchase History</h3>
+                <ul className="list-group">
+                    <li className="list-group-item">
+                        <table>
+                            <thead>
+                                <td><strong>Date</strong></td>
+                                <td><strong>Products</strong></td>
+                                <td><strong>Amount</strong></td>
+                                <td><strong>Status</strong></td>
+                            </thead>
+                            <tbody>
+                                {rows}
+                            </tbody>
+                        </table>
+                    </li>
+                </ul>
+            </div>
         )
     }
 
-    return(
+    return (
         <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
-            
+            <div class="menu-background"></div>
+
             <div className="row">
 
                 <div className="col-3">
                     {userLinks()}
-                </div>    
+                </div>
 
                 <div className="col-9">
                     {userInfo()}
@@ -121,5 +122,5 @@ const Dashboard = () => {
 
         </Layout>
     );
-    };
+};
 export default Dashboard;
