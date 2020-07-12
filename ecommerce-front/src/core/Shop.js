@@ -113,6 +113,7 @@ const Shop  = () => {
     return(
 
         <Layout title = "Shop" description = "Find what you need!" className="container-fluid">
+            <div class="menu-background"></div>
             <Carousel>
             <Carousel.Item>
                 <img

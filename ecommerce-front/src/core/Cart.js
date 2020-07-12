@@ -49,6 +49,7 @@ const Cart= () => {
 
     return (
         <Layout title = "Shopping Cart" description = "Shop Now!" className="container-fluid">
+            <div class="menu-background"></div>
             <div className="row">
 
                 <div className="col-6 mb-2">
