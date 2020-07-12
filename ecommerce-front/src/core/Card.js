@@ -83,7 +83,7 @@ const Card = ({
     return cartUpdate &&
       <div className="input-group mb-3">
 
-        <div className="input-group-prepend">
+        <div className="input-group-prepend width-adjust">
           <span className="input-group-text">Adjust Quantity</span>
         </div>
 

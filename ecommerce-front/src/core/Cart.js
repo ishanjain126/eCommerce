@@ -20,48 +20,49 @@ const Cart= () => {
     const showItems = items => {
         return (
             <div>
-                <h2> Your cart has {`${items.length}`} items. </h2>
-                <hr />
+                <div className="cart-header"> Your cart has {`${items.length}`} items. </div>
 
-             {/* looking through each product and giving it to display  */}
-                {items.map((product, i) => (
-                    <Card 
-                    key={i} 
-                    product={product} 
-                    showAddToCartButton={false}
-                    cartUpdate={true}
-                    showRemoveProductButton = {true}
-                    setRun = {setRun}
-                    run = {run}
-                    />
-                ))}
+                <div className="jumbotron prod-row greyback height-adjust">
+                {/* looking through each product and giving it to display  */}
+                    {items.map((product, i) => (
+                        <div className="new-card" key={i}>
+                        <Card 
+                        product={product} 
+                        showAddToCartButton={false}
+                        cartUpdate={true}
+                        showRemoveProductButton = {true}
+                        setRun = {setRun}
+                        run = {run}
+                        />
+                        </div>
+                    ))}
+                </div>
             </div>
         )
     }
 
     const noItemsMessage = () => {
         return(
-            <h2>You cart is empty. <br />
+            <div>
+            <div className="cart-header">You cart is empty.</div>
+            <div class="jumbotron cart-banner">
                 <Link to="/shop">Continue Shopping</Link>
-            </h2>
+            </div>
+            </div>
         )
     };
 
     return (
-        <Layout title = "Shopping Cart" description = "Shop Now!" className="container-fluid">
+        <Layout title = "Shopping Cart" description = "Shop Now!" className="container-fluid" id="cart">
             <div class="menu-background"></div>
-            <div className="row">
-
-                <div className="col-6 mb-2">
+                <div>
                     {items.length > 0 ? showItems(items) : noItemsMessage()}
                 </div>
 
-                <div className="col-6">
-                    <h2 className="mb-4">Your cart summary</h2>
-                    <hr />
+                <div className="cart-summary">
+                    <h3>Your Cart Summary</h3>
                     <Checkout products={items} />
                 </div>
-            </div>
         </Layout>
     )
 };
