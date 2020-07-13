@@ -13,8 +13,8 @@ const AdminDashboard = () => {
         return (
             <div className="card">
 
-                <h4 className="card-header margin-edit">Admin Links</h4>
-                <ul className="list-group">
+                <h4 className="card-header marg-reduce">Admin Links</h4>
+                <ul className="list-group marg-reduce">
                     <li className="list-group-item">
                         <Link className="nav-link nav-blocks" to="/create/category">Create Category</Link>
                     </li>
@@ -35,7 +35,7 @@ const AdminDashboard = () => {
                 <h3 className="card-header">
                     User Information
                 </h3>
-                <ul className="list-group">
+                <ul className="list-group marg-reduce">
                     <li className="list-group-item"><h5>{name}</h5></li>
                     <li className="list-group-item"><h5>{email}</h5></li>
                     <li className="list-group-item"><h5>{role === 1 ? 'Admin' : "Registered User"}</h5></li>
@@ -47,7 +47,6 @@ const AdminDashboard = () => {
     return (
         <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
             <div class="menu-background"></div>
-
             <div className="admin-bg">
                 <div className="row">
 
