@@ -53,6 +53,19 @@ body {
     animation: Gradient 15s ease infinite;
 }
 
+
+.jumbotron-2 {
+    width: 30wh;
+    height: 30vh;
+    color: white;
+    background: linear-gradient(-45deg,#fdfc47,#24fe41,#4bc0c8,#f11712,#0099f9,black);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 1 5s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -813,4 +826,84 @@ ul {
 
 .width-adjust {
     width: 70%;
+}
+
+.admin-bg{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 2em;
+}
+
+.prod-back{
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}   
+
+.pad-reduce{
+    padding: 3%;
+    margin-bottom: 0%;
+}
+
+.prod-card{
+    width: 100%;
+    display: flex;
+}
+
+.prod-card .card{
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    color: #383838;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.prod-card .card .product-img{
+    width: 40%;
+}
+
+.prod-card .card .card-info{
+    width: 60%;
+    text-align: left;
+    border-radius: 0px 10px 10px 0px;
+    display: block;
+    padding: 1%;
+}
+
+.prod-card .card .card-info .card-text{
+    font-size: xx-large;
+}
+
+.prod-card .card .card-info p{
+    width: 90%;
+}
+
+
+.prod-card .card .card-price{
+    font-size: x-large;
+}
+
+.prod-card .card .product-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.prod-header{
+    text-align: center;
+    font-size: x-large;
+    padding: 1%;
+    background-color: white;
+}
+
+.marg-reduce{
+    margin: 0;
+}
+
+.marg-inc{
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

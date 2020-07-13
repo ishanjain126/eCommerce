@@ -80,7 +80,7 @@ const Home = () => {
             <img src={img_src} class="banner" />
             <div class="include-logo">
                 <div class="best-sellers"><div class="circle"><img src={seller_src} class="seller" /></div></div>
-                <div className="prod-row">
+                <div className="prod-row marg-inc">
                     {productsBySell.map((product, i) => (
                         <div key={i} className="new-card">
                             <Card product={product} />

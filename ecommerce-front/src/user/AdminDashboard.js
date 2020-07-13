@@ -13,16 +13,16 @@ const AdminDashboard = () => {
         return (
             <div className="card">
 
-                <h4 className="card-header">Admin Links</h4>
-                <ul className="list-group">
+                <h4 className="card-header marg-reduce">Admin Links</h4>
+                <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/category">Create Category</Link>
+                        <Link className="nav-link nav-blocks" to="/create/category">Create Category</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/create/product">Create Product</Link>
+                        <Link className="nav-link nav-blocks" to="/create/product">Create Product</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/admin/products">Manage Products</Link>
+                        <Link className="nav-link nav-blocks" to="/admin/products">Manage Products</Link>
                     </li>
                 </ul>
             </div>
@@ -35,10 +35,10 @@ const AdminDashboard = () => {
                 <h3 className="card-header">
                     User Information
                 </h3>
-                <ul className="list-group">
-                    <li className="list-group-item">{name}</li>
-                    <li className="list-group-item">{email}</li>
-                    <li className="list-group-item">{role === 1 ? 'Admin' : "Registered User"}</li>
+                <ul className="list-group marg-reduce">
+                    <li className="list-group-item"><h5>{name}</h5></li>
+                    <li className="list-group-item"><h5>{email}</h5></li>
+                    <li className="list-group-item"><h5>{role === 1 ? 'Admin' : "Registered User"}</h5></li>
                 </ul>
             </div>
         )
@@ -47,8 +47,8 @@ const AdminDashboard = () => {
     return (
         <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
             <div class="menu-background"></div>
-
-            <div className="row">
+            <div className="admin-bg">
+                <div className="row">
 
                 <div className="col-3">
                     {adminLinks()}
@@ -58,8 +58,9 @@ const AdminDashboard = () => {
                     {adminInfo()}
                 </div>
 
-            </div>
+                </div>
 
+            </div>
         </Layout>
     );
 };

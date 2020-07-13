@@ -46,21 +46,20 @@ const Product = props => {
             className="container-fluid"
         >
             <div class="menu-background"></div>
-
-            <div className="row">
-
-                <div className="col-8">
+            <div>
+                <div className="prod-back height-adjust pad-reduce">
+                <div className="prod-card">
                     {product && product.description && <Card product={product} showViewProductButton={false} showDesc={true} />}
                 </div>
-
-                <div className="col-4">
-                    <h6>You might also be interested in...</h6>
+                </div>
+                    <div className="prod-header">You might also be interested in...</div>
+                    <div className="prod-row greyback">
                     {relatedProduct.map((p, i) => (
-                        <div className="mb-3">
+                        <div className="new-card">
                             <Card key={i} product={p} />
                         </div>
                     ))}
-                </div>
+                    </div>
             </div>
         </Layout>
     );
