@@ -44,7 +44,7 @@ const Cart= () => {
     const noItemsMessage = () => {
         return(
             <div>
-            <div className="cart-header">You cart is empty.</div>
+            <div className="cart-header">Your cart is empty.</div>
             <div class="jumbotron cart-banner">
                 <Link to="/shop">Continue Shopping</Link>
             </div>
