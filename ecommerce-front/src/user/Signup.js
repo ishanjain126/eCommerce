@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Layout from '../core/Layout';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {signup} from '../auth'
 
 const Signup = () => 
@@ -41,6 +41,15 @@ const Signup = () =>
             }
         })
     };
+
+    const redirectUser = (success) => {
+        if(success){
+            return(
+                <Redirect to="/signin" />
+            )
+        }
+    }
+
 
     const signUpForm = () => (
         <div class="signup-back">
@@ -98,6 +107,7 @@ const Signup = () =>
     description="Signup to Undecided"
     className="container-fluid">
         {signUpForm()}
+        {redirectUser(success)}
 
     </Layout>  
 );
