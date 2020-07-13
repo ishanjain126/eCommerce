@@ -80,6 +80,7 @@ const AddCategory = () => {
 
     return (
         <Layout title="Add new Category" description={`Hello, ${user.name}!, ready to add a new category?`}>
+            <div class="menu-background"></div>
             
             <div className="row">  
 

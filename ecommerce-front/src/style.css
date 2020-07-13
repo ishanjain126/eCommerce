@@ -535,6 +535,32 @@ a:active {
     text-align: center;
 }
 
+.profile-back > .form-container{
+    width : 40%;
+    height: 60vh;
+    background-color: linear-gradient(#086972,#01a9b4);
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px #000000AD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white
+}
+
+.profile-back{
+    width: 100%;
+    height: 100vh;
+    background-color: #01a9b4;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .form-container{
     width : 40%;
     height: 60vh;
@@ -558,6 +584,31 @@ a:active {
     width: 80%;
 }
 
+#update-profile > .form-size >.form-group > .form-control{
+    color: black;
+    background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+ 
+}
+
+#update-profile > h1 {
+    font-family: Andres; 
+    text-align: center;
+
+}
+
+#update-profile > .form-size{
+    width:100%;
+}
+
+#update-profile >.form-size > .form-group > .form-control:focus{
+    background: white 0% 0% no-repeat padding-box;
+    box-shadow:  0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
+    
+}
+
+
+
 #login-form > .form-group > .form-control{
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
@@ -568,6 +619,10 @@ a:active {
     background: white 0% 0% no-repeat padding-box;
     box-shadow:  0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
     
+}
+
+.buttonHover:hover{
+    background-color: #01a9b4;
 }
 
 .glow:hover{
