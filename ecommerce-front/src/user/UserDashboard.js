@@ -74,24 +74,25 @@ const Dashboard = () => {
             const products = record.products.map(p => `${p.name} `);
             rows.push(
                 <tr>
-                     |<td scope="row">{record.createdAt.split('T')[0]} </td> |
-                     <td>{products}</td> |
-                     <td>{record.amount}</td> |
-                     <td>{record.status}</td> |
+                    <td scope="row">{record.createdAt.split('T')[0]} </td>
+                    <td>{products}</td>
+                    <td>{record.amount}</td>
+                    <td>{record.status}</td>
                 </tr>
             );
         });
         return (
-            <div className="card mb-5">
+            <div className="card mb-5" style={{display: 'inherit'}}>
                 <h3 className="card-header">Purchase History</h3>
                 <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <table className="table table-borderless">
-                            <thead>
-                            <tr><strong>|</strong><th scope="col"><strong>Date</strong></th><strong>|</strong>
-                                <th scope="col"><strong>Products</strong></th><strong>|</strong>
-                                <th scope="col"><strong>Amount</strong></th><strong>|</strong>
-                                <th scope="col"><strong>Status</strong></th><strong>|</strong></tr>
+                        <table className="table table-hover table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Products</th>
+                                    <th scope="col">Amount</th>
+                                    <th scope="col">Status</th></tr>
                             </thead>
                             <tbody>
                                 {rows}
