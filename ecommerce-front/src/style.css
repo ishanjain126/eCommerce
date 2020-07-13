@@ -627,7 +627,7 @@ a:active {
 }
 
 .cat-card{
-    box-shadow: 0px 3px 6px #000000AD;
+    box-shadow: 20px 3px 6px #000000AD;
     margin-top: 1%;
     margin-bottom: 2%;
     border-radius: 15px;
@@ -919,6 +919,10 @@ ul {
     color: #383838;
     border-right: 1px solid white;
     padding-left: 5%;
+}
+
+.list-group {
+    margin: 0 2em 0 2em;
 }
 
 .new-card .form-control {
