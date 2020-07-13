@@ -69,6 +69,9 @@ const Signin = () =>
                         Submit
                     </button>
 
+                    {showError()}
+                    {showLoading()}
+
                 </form>
             </div>
         </div>
@@ -76,13 +79,13 @@ const Signin = () =>
     );
 
     const showError = () => (
-        <div className="alert alert-danger" style={{display: error ? '': 'none'}}>
+        <div className="alert alert-danger marg-inc" style={{display: error ? '': 'none'}}>
             {error}
         </div>
     )
 
     const showLoading = () => (
-        loading && (<div className="alert alert-info"><h3>Loading...</h3></div>)
+        loading && (<div className="alert alert-info marg-inc"><h3>Loading...</h3></div>)
     )
 
     const redirectUser = () => {
@@ -104,9 +107,7 @@ const Signin = () =>
     title="Sign In Page" 
     description="Sign IN to Undecided"
     className="container-fluid">
-        {showLoading()}
         {signInForm()}
-        {showError()}
         {redirectUser()}
 
     </Layout>  
