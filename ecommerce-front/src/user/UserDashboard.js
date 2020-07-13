@@ -39,7 +39,7 @@ const Dashboard = () => {
 
     const userLinks = () => {
         return (
-            <div className="card">
+            <div className="card"  style={{display: 'inherit'}}>
                 <h4 className="card-header marg-reduce">User Links</h4>
                 <ul className="list-group marg-reduce">
                     <li className="list-group-item">
@@ -55,7 +55,7 @@ const Dashboard = () => {
 
     const userInfo = () => {
         return (
-            <div className="card mb-5">
+            <div className="card mb-5" style={{display: 'inherit'}}>
                 <h3 className="card-header">
                     User Information
                 </h3>
