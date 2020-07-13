@@ -30,7 +30,7 @@ const Profile = ({match}) => {
             }
             else{
                 // pre populate the existing information in the form. If user wants to update he/she can do so.
-                setValues({...values, name:data.name, email:data.email})
+                setValues({...values, name:data.name, email:data.email })
             }
         })
     }
@@ -66,7 +66,7 @@ const Profile = ({match}) => {
     const redirectUser = (success) => {
         if(success){
             return(
-                <Redirect to="/cart" />
+                <Redirect to="/admin/dashboard" />
             )
         }
     }
