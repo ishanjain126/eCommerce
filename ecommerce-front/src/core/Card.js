@@ -124,12 +124,13 @@ const Card = ({
 
         <div class="card-text">{product.name}</div>
         {/* {<p>{product.description.substring(0, 100)} </p>} */}
-        {showDescription(showDesc)}
 
         {/*<p>Category: {product.category && product.category.name}</p>*/}
         {/*<p>Added {moment(product.createdAt).fromNow()}</p>*/}
         <div class="card-actions">
-          <div class="card-price">₹ {product.price}</div>
+          <div class="card-price">₹{product.price}</div>
+
+          {showDescription(showDesc)}
 
           {showViewButton(showViewProductButton)}
 
