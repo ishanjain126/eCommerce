@@ -594,6 +594,22 @@ a:active {
     width: 80%;
 }
 
+
+
+#new-category > .form-group > .form-control{
+    color: black;
+    background: rgba(200, 255, 255, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    width:100%;
+ 
+}
+
+#new-category{
+    padding-top: 100px;
+    width:70%;
+    
+}
+
 #update-profile > .form-size >.form-group > .form-control{
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
@@ -629,6 +645,11 @@ a:active {
 #login-form>.form-group>.form-control:focus {
     background: white 0% 0% no-repeat padding-box;
     box-shadow: 0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
+}
+
+#link-to-dash{
+    font-size: large;
+    
 }
 
 .buttonHover:hover{

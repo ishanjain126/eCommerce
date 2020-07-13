@@ -66,7 +66,7 @@ const Profile = ({match}) => {
     const redirectUser = (success) => {
         if(success){
             return(
-                <Redirect to="/cart" />
+                <Redirect to="/user/dashboard" />
             )
         }
     }
