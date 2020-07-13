@@ -74,7 +74,7 @@ const Dashboard = () => {
             const products = record.products.map(p => `${p.name} `);
             rows.push(
                 <tr>
-                     |<td>{record.createdAt.split('T')[0]} </td> |
+                     |<td scope="row">{record.createdAt.split('T')[0]} </td> |
                      <td>{products}</td> |
                      <td>{record.amount}</td> |
                      <td>{record.status}</td> |
@@ -86,12 +86,12 @@ const Dashboard = () => {
                 <h3 className="card-header">Purchase History</h3>
                 <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <table className="table-layout">
+                        <table className="table table-borderless">
                             <thead>
-                            <strong>|</strong><td><strong>Date</strong></td><strong>|</strong>
-                                <td><strong>Products</strong></td><strong>|</strong>
-                                <td><strong>Amount</strong></td><strong>|</strong>
-                                <td><strong>Status</strong></td><strong>|</strong>
+                            <tr><strong>|</strong><th scope="col"><strong>Date</strong></th><strong>|</strong>
+                                <th scope="col"><strong>Products</strong></th><strong>|</strong>
+                                <th scope="col"><strong>Amount</strong></th><strong>|</strong>
+                                <th scope="col"><strong>Status</strong></th><strong>|</strong></tr>
                             </thead>
                             <tbody>
                                 {rows}
