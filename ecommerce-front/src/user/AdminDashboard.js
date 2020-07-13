@@ -31,7 +31,7 @@ const AdminDashboard = () => {
 
     const adminInfo = () => {
         return (
-            <div className="card mb-5">
+            <div className="card mb-5"  style={{display: 'inherit'}}>
                 <h3 className="card-header">
                     User Information
                 </h3>
