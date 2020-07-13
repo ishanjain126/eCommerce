@@ -16,13 +16,13 @@ const AdminDashboard = () => {
                 <h4 className="card-header marg-reduce">Admin Links</h4>
                 <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <Link className="nav-link nav-blocks" to="/create/category">Create Category</Link>
+                        <Link className="nav-blocks1" to="/create/category">Create Category</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link nav-blocks" to="/create/product">Create Product</Link>
+                        <Link className="nav-blocks1" to="/create/product">Create Product</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link nav-blocks" to="/admin/products">Manage Products</Link>
+                        <Link className="nav-blocks1" to="/admin/products">Manage Products</Link>
                     </li>
                 </ul>
             </div>
@@ -31,7 +31,7 @@ const AdminDashboard = () => {
 
     const adminInfo = () => {
         return (
-            <div className="card mb-5">
+            <div className="card mb-5"  style={{display: 'inherit'}}>
                 <h3 className="card-header">
                     User Information
                 </h3>
@@ -59,7 +59,6 @@ const AdminDashboard = () => {
                 </div>
 
                 </div>
-
             </div>
         </Layout>
     );
