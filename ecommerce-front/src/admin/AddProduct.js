@@ -92,10 +92,10 @@ const AddProduct = () => {
     };
 
     const newPostForm = () => (
-        <form className="mb-3" onSubmit={clickSubmit}>
+        <form className="mb-3 template-form" onSubmit={clickSubmit}>
             <h4>Post Photo</h4>
             <div className="form-group">
-                <label className="btn btn-secondary">
+                <label className="btn btn-secondary template-back">
                     <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
                 </label>
             </div>
@@ -168,15 +168,19 @@ const AddProduct = () => {
     return (
         <Layout title="Add new Product" description={`Hello, ${user.name}!, ready to add a new product?`}>
             <div class="menu-background"></div>
-            <div className="row">
 
-                <div className="col-md-8 offset-md-2">
+            <div className="cat-card center-96">
+            <div className="row jumbotron height-adjust border-15 pad-null">
+
+            <div className="colw20 specify-height marg-reduce"><div className="vert-text">ADD PRODUCT</div></div>
+                <div className="colw80 pad-null specify-height info pad-increase">
                     {showLoading()}
                     {showSuccess()}
                     {showError()}
                     {newPostForm()}
                 </div>
 
+            </div>
             </div>
 
         </Layout>

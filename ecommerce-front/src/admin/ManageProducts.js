@@ -60,28 +60,29 @@ const ManageProducts = () => {
 
                         {products.map((p, i) => (
 
-                            <li key={i}
-                                className="list-group-item d-flex justify-content-between align-items-center">
-
-                                <strong>{p.name}</strong>
-                                <Link to={`/admin/product/update/${p._id}`}>
+                            <div key={i}
+                                className="row">
+                                
+                                <div className="col-md-4 ta-left"><strong>{p.name}</strong></div>
+                                <div className="col-md-4 ta-center"><Link to={`/admin/product/update/${p._id}`}>
                                     <span className="badge badge-warning badge-pill">
                                         Update
                                     </span>
                                 </Link>
+                                </div>
 
                                 {/* we need to pass the one argument => product id, everything else 
                                 is already mentioned in the destroy function */}
 
-                                <span
+                                <div className="col-md-4 ta-right"><span
                                     onClick={() => destroy(p._id)}
                                     className="badge badge-danger badge-pill"
                                     style={{ cursor: 'pointer' }}
                                 >
                                     Delete
                                 </span>
-
-                            </li>
+                                </div>
+                            </div>
                         ))}
                     </ul>
                 </div>

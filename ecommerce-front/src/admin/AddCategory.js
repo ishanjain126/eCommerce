@@ -59,7 +59,7 @@ const AddCategory = () => {
     )
 
     const newCategoryForm = () => (
-        <form onSubmit={clickSubmit} >
+        <form onSubmit={clickSubmit}>
             <div id = "new-category">
             <div className="form-group">
                 <label className="h2">
@@ -75,24 +75,24 @@ const AddCategory = () => {
             <button className="btn btn-outline-primary buttonHover">
                 Create Category
             </button>
+            {goBack()}
             </div>
         </form>
     )
 
-
     return (
-        <Layout title="Add new Category" description={`Hello, ${user.name}!, ready to add a new category?`}>
+        <Layout title="Add new Category" description={`Hello, ${user.name}!, ready to add a new category?`} className="color-grey">
             <div class="menu-background"></div>
-            
-            <div className="row">  
 
-                <div className="col-md-8 offset-md-2">
+            <div className="cat-card center-96">  
+            <div className="row jumbotron height-adjust border-15 pad-null">
+                <div className="colw20 specify-height marg-reduce"><div className="vert-text">CREATE CATEGORY</div></div>
+                <div className="colw80 pad-null specify-height info pad-increase">
                     {showSuccess()}
                     {showError()}
                     {newCategoryForm()}
-                    {goBack()}
                 </div>
-
+            </div>
             </div>
 
         </Layout>

@@ -14,6 +14,10 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
 body {
     background: rgb(255, 255, 255);
     overflow-x: hidden;
@@ -41,6 +45,7 @@ body {
 }
 
 /* jumbotron animation */
+
 
 .jumbotron {
     width: 30wh;
@@ -149,6 +154,7 @@ body {
     width: 100%;
     height: 3.5em;
 }
+
 
 /* black shade from 10-1 */
 
@@ -608,25 +614,122 @@ a:active {
 }
 
 
+.colw20{
+    width: 20%;
+}
+
+.colw80{
+    width: 80%;
+}
+
+.cat-form-margin{
+    margin-top: 5%;
+}
+
+.cat-card{
+    box-shadow: 0px 3px 6px #000000AD;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    border-radius: 15px;
+}
+
+.color-grey{
+    color: #383838;
+}
+
+.specify-height{
+   min-height: 74vh;
+}
+
+
+.border-15{
+    border-radius: 15px;
+}
+
+.info{
+    background: white;
+    border-radius: 0px 15px 15px 0px;
+}
+
+
+.vert-text{
+    margin-top: 40%;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    text-align: center;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Anton', sans-serif;
+    border-radius: 15px 0px 0px 15px;
+    width: 100%;
+    height: 50%;
+    /* background: #200122;
+    background: -webkit-linear-gradient(225deg, #6f0000, #200122);
+    background: linear-gradient(225deg, #6f0000, #200122); */
+
+}
+
 
 #new-category > .form-group > .form-control{
     color: black;
-    background: rgba(200, 255, 255, 0.705) 0% 0% no-repeat padding-box;
-    border-radius: 20px;
+    background: rgba(223, 222, 222, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
     width:100%;
+    margin: 1% auto;
+    padding: 0%;
  
 }
 
+#new-category > .btn{
+    margin: 1% auto;
+    border-radius: 10px;
+}
+
+.template-form .form-group > .form-control{
+    color: black;
+    background: rgba(223, 222, 222, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width:100%;
+    margin: 1% auto;
+    padding: 0.5%;
+ 
+}
+
+.template-form  .btn{
+    margin: 1% auto;
+    border-radius: 10px;
+}
+
+.template-form  .template-back{
+    background-color: #e8e8e8;
+    color: #383838;
+}
+
+
+.template-form{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    color: #383838
+}
+
+
+.pad-null{
+    padding: 0;
+}
+
 #new-category{
-    padding-top: 100px;
-    width:70%;
-    
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 10px;
+    color: #383838
 }
 
 #update-profile > .form-size >.form-group > .form-control{
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
-    border-radius: 20px;
  
 }
 
@@ -684,6 +787,8 @@ a:active {
     align-items: center;
     text-align: center;
 }
+
+
 
 #signup-form>.form-group>.form-control {
     color: black;
@@ -906,4 +1011,26 @@ ul {
 .marg-inc{
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+
+.center-96{
+    width: 96%;
+    margin-left: 2%;
+}
+
+.pad-increase{
+    padding: 2%;
+}
+
+.ta-center{
+    text-align: center;
+}
+
+.ta-left{
+    text-align: left;
+}
+
+.ta-right{
+    text-align: right;
 }
