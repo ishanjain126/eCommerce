@@ -40,13 +40,13 @@ const Dashboard = () => {
     const userLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header">User Links</h4>
-                <ul className="list-group">
+                <h4 className="card-header marg-reduce">User Links</h4>
+                <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <Link className="nav-link" to="/cart">My Cart</Link>
+                        <Link className="nav-blocks2" to="/cart">My Cart</Link>
                     </li>
                     <li className="list-group-item">
-                        <Link className="nav-link" to={`./profile/${_id}`}>Update Profile</Link>
+                        <Link className="nav-blocks2" to={`./profile/${_id}`}>Update Profile</Link>
                     </li>
                 </ul>
             </div>
@@ -59,10 +59,10 @@ const Dashboard = () => {
                 <h3 className="card-header">
                     User Information
                 </h3>
-                <ul className="list-group">
-                    <li className="list-group-item">{name}</li>
-                    <li className="list-group-item">{email}</li>
-                    <li className="list-group-item">{role === 1 ? 'Admin' : 'Registered User'}</li>
+                <ul className="list-group marg-reduce">
+                    <li className="list-group-item"><h5>{name}</h5></li>
+                    <li className="list-group-item"><h5>{email}</h5></li>
+                    <li className="list-group-item"><h5>{role === 1 ? 'Admin' : 'Registered User'}</h5></li>
                 </ul>
             </div>
         )
@@ -71,27 +71,27 @@ const Dashboard = () => {
     const purchaseHistory = () => {
         const rows = [];
         history.forEach(record => {
-            const products = record.products.map(p => `${p.name}, `);
+            const products = record.products.map(p => `${p.name} `);
             rows.push(
                 <tr>
-                    <td>{record.createdAt.split('T')[0]} | </td>
-                    <td>{products} | </td>
-                    <td>{record.amount} | </td>
-                    <td>{record.status} | </td>
+                     |<td>{record.createdAt.split('T')[0]} </td> |
+                     <td>{products}</td> |
+                     <td>{record.amount}</td> |
+                     <td>{record.status}</td> |
                 </tr>
             );
         });
         return (
             <div className="card mb-5">
                 <h3 className="card-header">Purchase History</h3>
-                <ul className="list-group">
+                <ul className="list-group marg-reduce">
                     <li className="list-group-item">
-                        <table>
+                        <table className="table-layout">
                             <thead>
-                                <td><strong>Date</strong></td>
-                                <td><strong>Products</strong></td>
-                                <td><strong>Amount</strong></td>
-                                <td><strong>Status</strong></td>
+                            <strong>|</strong><td><strong>Date</strong></td><strong>|</strong>
+                                <td><strong>Products</strong></td><strong>|</strong>
+                                <td><strong>Amount</strong></td><strong>|</strong>
+                                <td><strong>Status</strong></td><strong>|</strong>
                             </thead>
                             <tbody>
                                 {rows}
@@ -106,20 +106,24 @@ const Dashboard = () => {
     return (
         <Layout title="Dashboard" description={`Hello, ${name}!`} className="container-fluid">
             <div class="menu-background"></div>
+            <div className="user-bg">
+                <div className="row">
 
-            <div className="row">
+                    <div className="col-3">
+                        {userLinks()}
+                    </div>
 
-                <div className="col-3">
-                    {userLinks()}
+                    <div className="col-9">
+                        {userInfo()}
+                    </div>
+                    <div class="spacing-div"></div>
+                    <div className="col-12">
+                        {purchaseHistory(history)}
+                    </div>
+
                 </div>
-
-                <div className="col-9">
-                    {userInfo()}
-                    {purchaseHistory(history)}
-                </div>
-
             </div>
-
+            <div className="spacing-div"></div>
         </Layout>
     );
 };
