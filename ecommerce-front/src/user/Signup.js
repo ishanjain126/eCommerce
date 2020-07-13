@@ -73,6 +73,7 @@ const Signup = () =>
 
                     </form>
                     {showError()}
+                    {showSuccess()}
 
                 </div>
             </div>
@@ -80,13 +81,13 @@ const Signup = () =>
     );
 
     const showError = () => (
-        <div className="alert alert-danger" style={{display: error ? '': 'none'}}>
+        <div className="alert alert-danger marg-inc" style={{display: error ? '': 'none'}}>
             {error}
         </div>
     )
 
     const showSuccess = () => (
-        <div className="alert alert-info" style={{display: success ? '': 'none'}}>
+        <div className="alert alert-info marg-inc" style={{display: success ? '': 'none'}}>
             New account is created. Please <Link to="./signin">Signin</Link> 
         </div>
     )
@@ -96,7 +97,6 @@ const Signup = () =>
     title="Signup Page" 
     description="Signup to Undecided"
     className="container-fluid">
-        {showSuccess()}
         {signUpForm()}
 
     </Layout>  
