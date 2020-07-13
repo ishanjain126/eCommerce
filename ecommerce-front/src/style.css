@@ -14,10 +14,6 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-
-
-
-
 body {
     background: rgb(255, 255, 255);
     overflow-x: hidden;
@@ -55,6 +51,16 @@ body {
     -webkit-animation: Gradient 1 5s ease infinite;
     -moz-animation: Gradient 15s ease infinite;
     animation: Gradient 15s ease infinite;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout-content {
+    flex-grow: 1;
 }
 
 @-webkit-keyframes Gradient {
@@ -180,14 +186,13 @@ body {
     color: white;
 }
 
-
-.search-card{
+.search-card {
     margin-bottom: 5%;
     box-shadow: 0px 3px 6px #000000AD;
     border-radius: 10px;
 }
 
-.search-res{
+.search-res {
     text-align: center;
     font-family: Roboto-Thin;
     background-color: white;
@@ -271,9 +276,14 @@ a:active {
     width: 2.75%;
 }
 
+#signout {
+    width: 5%;
+}
+
 #signout-span {
     padding: 6%;
 }
+
 .body-pad {
     padding: 1%;
 }
@@ -523,11 +533,11 @@ a:active {
     text-align: center;
 }
 
-.login-back{
+.login-back {
     width: 100%;
     height: 100vh;
     background-image: url("./images/alt2.jpg");
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -561,8 +571,9 @@ a:active {
     text-align: center;
 }
 
-.form-container{
-    width : 40%;
+
+.form-container {
+    width: 40%;
     height: 60vh;
     background-color: rgba(0, 0, 0, 0.678);
     border-radius: 10px;
@@ -575,12 +586,11 @@ a:active {
     color: white
 }
 
-
-.form-container > h1{
-   font-family: Andres; 
+.form-container>h1 {
+    font-family: Andres;
 }
 
-.form-size{
+.form-size {
     width: 80%;
 }
 
@@ -609,16 +619,16 @@ a:active {
 
 
 
-#login-form > .form-group > .form-control{
+
+#login-form>.form-group>.form-control {
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
     border-radius: 20px;
 }
 
-#login-form > .form-group > .form-control:focus{
+#login-form>.form-group>.form-control:focus {
     background: white 0% 0% no-repeat padding-box;
-    box-shadow:  0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
-    
+    box-shadow: 0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
 }
 
 .buttonHover:hover{
@@ -629,11 +639,11 @@ a:active {
     background-color: #e40737;
 }
 
-.signup-back{
+.signup-back {
     width: 100%;
     height: 100vh;
     background-image: url("./images/sign-alt-3.jpg");
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -641,28 +651,26 @@ a:active {
     text-align: center;
 }
 
-
-#signup-form > .form-group > .form-control{
+#signup-form>.form-group>.form-control {
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
     border-radius: 20px;
 }
 
-#signup-form > .form-group > .form-control:focus{
+#signup-form>.form-group>.form-control:focus {
     background: white 0% 0% no-repeat padding-box;
-    box-shadow:  0px 1px 1px rgba(235, 64, 52, 0.192) inset, 0px 0px 8px rgba(235, 64, 52, 0.5);
-    
+    box-shadow: 0px 1px 1px rgba(235, 64, 52, 0.192) inset, 0px 0px 8px rgba(235, 64, 52, 0.5);
 }
 
-.glow-green:hover{
+.glow-green:hover {
     background-color: #eb4034;
 }
 
-.shop-box{
+.shop-box {
     background-color: white;
 }
 
-.shop-box-small{
+.shop-box-small {
     background-image: white;
     margin-left: 2em;
     margin-top: 3em;
@@ -671,32 +679,31 @@ a:active {
     padding: 2%;
 }
 
-.sticky-div{
+.sticky-div {
     position: sticky;
     top: 4rem;
 }
 
-h4{
-    color:#383838;
+h4 {
+    color: #383838;
     margin-left: 6%;
     padding-bottom: 1%;
 }
 
-ul{
+ul {
     margin-left: 1em;
 }
 
-.radio-text{
+.radio-text {
     margin-left: 1em;
 }
 
-.greyback{
+.greyback {
     padding: 1%;
     justify-content: space-around;
 }
 
-
-.cart-header{
+.cart-header {
     text-align: center;
     font-size: x-large;
     padding: 1%;
@@ -704,35 +711,35 @@ ul{
     box-shadow: 0px 3px 6px #00000050;
 }
 
-.cart-banner{
+.cart-banner {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color:white;
+    color: white;
 }
 
-.cart-banner > a{
+.cart-banner>a {
     font-family: Andres;
     color: white;
     font-size: xx-large;
     padding: 2%;
 }
 
-.cart-summary{
+.cart-summary {
     text-align: left;
     font-size: x-large;
     padding: 1%;
     background-color: white;
 }
 
-#summary-content > h4{
+#summary-content>h4 {
     margin: 0;
 }
 
-.cart-summary .form-control:valid{
+.cart-summary .form-control:valid {
     background-color: #FAFAFA;
     border-color: #B5B5B5;
     border-style: solid;
@@ -740,33 +747,32 @@ ul{
     color: #222222;
 }
 
-.cart-summary .form-control::placeholder{
+.cart-summary .form-control::placeholder {
     color: #222222;
 }
 
-.cart-summary .btn{
+.cart-summary .btn {
     background-color: rgb(75, 189, 85);
 }
 
-.height-adjust{
+.height-adjust {
     height: min-content;
 }
 
-.jumbotron .new-card{
+.jumbotron .new-card {
     color: #383838;
 }
 
-.jumbotron .new-card{
+.jumbotron .new-card {
     color: #383838;
 }
 
-.new-card .input-group{
+.new-card .input-group {
     padding: 2%;
     box-shadow: none;
 }
 
-
-.new-card .input-group-text{
+.new-card .input-group-text {
     background-color: #dddddd;
     width: 100%;
     border-radius: 10px 0px 0px 10px;
@@ -776,7 +782,7 @@ ul{
     padding-left: 5%;
 }
 
-.new-card .form-control{
+.new-card .form-control {
     background-color: #dddddd;
     width: 30%;
     box-shadow: none;
@@ -784,6 +790,6 @@ ul{
     border-radius: 0px 10px 10px 0px;
 }
 
-.width-adjust{
-    width : 70%;   
+.width-adjust {
+    width: 70%;
 }

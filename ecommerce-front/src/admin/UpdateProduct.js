@@ -4,7 +4,7 @@ import { isAuthenticated } from '../auth';
 import { Link, Redirect } from 'react-router-dom';
 import { getProduct, getCategories, updateProduct } from './apiAdmin';
 
-const UpdateProduct = ({match}) => {
+const UpdateProduct = ({ match }) => {
     const [values, setValues] = useState({
         name: '',
         description: '',
@@ -74,13 +74,13 @@ const UpdateProduct = ({match}) => {
                 setValues({ ...values, error: data.error });
             } else {
                 setValues({
-                categories: data,
-                formData: new FormData()
+                    categories: data,
+                    formData: new FormData()
                 })
             }
         });
     };
-    
+
     // this method runs when the component mounts and the value changes. This is the replacement to the 
     // lifecycle components that we used to use in the class components
     // as soon as the value changes then the form data also gets updated and is send to the backend with the help of the useEffect function
@@ -94,34 +94,34 @@ const UpdateProduct = ({match}) => {
     const handleChange = name => event => {
         const value = name === 'photo' ? event.target.files[0] : event.target.value
         formData.set(name, value)
-        setValues({...values, [name]: value})
+        setValues({ ...values, [name]: value })
     }
 
     const clickSubmit = (event) => {
         event.preventDefault()
-        setValues({...values, error: '', loading:true})
+        setValues({ ...values, error: '', loading: true })
 
         // fields which we need to send to update the products
 
-        updateProduct( match.params.productId, user._id, token, formData)
-        .then(data => {
-            if(data.error){
-                setValues({...values, error: data.error})
-            }
-            else{
-                setValues({
-                    ...values, 
-                    name: ' ',
-                    description: ' ',
-                    price: ' ',
-                    quantity: ' ',
-                    photo: ' ',
-                    loading:false,
-                    error: ' ',
-                    createdProduct: data.name                 
-                });
-            }
-        });
+        updateProduct(match.params.productId, user._id, token, formData)
+            .then(data => {
+                if (data.error) {
+                    setValues({ ...values, error: data.error })
+                }
+                else {
+                    setValues({
+                        ...values,
+                        name: ' ',
+                        description: ' ',
+                        price: ' ',
+                        quantity: ' ',
+                        photo: ' ',
+                        loading: false,
+                        error: ' ',
+                        createdProduct: data.name
+                    });
+                }
+            });
     };
 
     const newPostForm = () => (
@@ -129,7 +129,7 @@ const UpdateProduct = ({match}) => {
             <h4>Post Photo</h4>
             <div className="form-group">
                 <label className="btn btn-secondary">
-                <input onChange={handleChange('photo')}  type="file" name="photo" accept="image/*" />
+                    <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
                 </label>
             </div>
 
@@ -180,7 +180,7 @@ const UpdateProduct = ({match}) => {
 
         </form>
     );
-    
+
     const showError = () => (
         <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
             {error}
@@ -201,8 +201,8 @@ const UpdateProduct = ({match}) => {
         );
 
     const redirectUser = () => {
-        if(redirectToProfile) {
-            if(!error){
+        if (redirectToProfile) {
+            if (!error) {
                 return <Redirect to="/" />
             }
         }
@@ -211,8 +211,9 @@ const UpdateProduct = ({match}) => {
 
     return (
         <Layout title="Add new Product" description={`Hello, ${user.name}!, can you be more responsible next time?`}>
-            
-            <div className="row">  
+            <div class="menu-background"></div>
+
+            <div className="row">
 
                 <div className="col-md-8 offset-md-2">
                     {showLoading()}

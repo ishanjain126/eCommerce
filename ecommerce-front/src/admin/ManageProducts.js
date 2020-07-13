@@ -1,25 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout'
-import {isAuthenticated} from '../auth'
-import {Link} from 'react-router-dom'
-import {getProducts, deleteProduct} from './apiAdmin'
+import { isAuthenticated } from '../auth'
+import { Link } from 'react-router-dom'
+import { getProducts, deleteProduct } from './apiAdmin'
 
 const ManageProducts = () => {
 
     // store the data in the state
     const [products, setProducts] = useState([])
 
-    const {user, token} = isAuthenticated()
+    const { user, token } = isAuthenticated()
 
     // to load all the products
     const loadProducts = () => {
         // get products to get all the products
         // then we get all the data
         getProducts().then(data => {
-            if(data.error){
+            if (data.error) {
                 console.log(data.error)
             }
-            else{
+            else {
                 setProducts(data)
             }
         })
@@ -27,10 +27,10 @@ const ManageProducts = () => {
 
     const destroy = productId => {
         deleteProduct(productId, user._id, token).then(data => {
-            if(data.error){
+            if (data.error) {
                 console.log(data.error)
             }
-            else{
+            else {
                 loadProducts()
             }
         })
@@ -41,13 +41,14 @@ const ManageProducts = () => {
     }, [])
 
     return (
-        <Layout title = "Manage Products" description = "Perform CRUD on Products" className="container-fluid">
+        <Layout title="Manage Products" description="Perform CRUD on Products" className="container-fluid">
 
-           
+            <div class="menu-background"></div>
+
             {/* <h2 className="mb-4"> Manage Products </h2> */}
 
             <div className="row">
-                <div className="col-12"> 
+                <div className="col-12">
                     <h2 className="text-center">
                         Total {products.length} Products
                     </h2>
@@ -60,10 +61,10 @@ const ManageProducts = () => {
                         {products.map((p, i) => (
 
                             <li key={i}
-                             className="list-group-item d-flex justify-content-between align-items-center">
+                                className="list-group-item d-flex justify-content-between align-items-center">
 
-                                 <strong>{p.name}</strong>
-                                 <Link to={`/admin/product/update/${p._id}`}>
+                                <strong>{p.name}</strong>
+                                <Link to={`/admin/product/update/${p._id}`}>
                                     <span className="badge badge-warning badge-pill">
                                         Update
                                     </span>
@@ -75,7 +76,7 @@ const ManageProducts = () => {
                                 <span
                                     onClick={() => destroy(p._id)}
                                     className="badge badge-danger badge-pill"
-                                    style= {{cursor:'pointer'}}
+                                    style={{ cursor: 'pointer' }}
                                 >
                                     Delete
                                 </span>
@@ -86,7 +87,7 @@ const ManageProducts = () => {
                 </div>
             </div>
 
-        
+
         </Layout>
     );
 }

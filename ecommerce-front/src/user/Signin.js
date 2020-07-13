@@ -16,7 +16,9 @@ const Signin = () =>
         redirectToReferrer: false,
     });
 
+    // Destructure
     const {email, password, loading, error, redirectToReferrer} = values;
+    
     const {user} = isAuthenticated();
 
     const handleChange = name => event => {
