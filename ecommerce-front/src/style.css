@@ -53,6 +53,19 @@ body {
     animation: Gradient 15s ease infinite;
 }
 
+
+.jumbotron-2 {
+    width: 30wh;
+    height: 30vh;
+    color: white;
+    background: linear-gradient(-45deg,#fdfc47,#24fe41,#4bc0c8,#f11712,#0099f9,black);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 1 5s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -537,6 +550,32 @@ a:active {
     width: 100%;
     height: 100vh;
     background-image: url("./images/alt2.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-back > .form-container{
+    width : 40%;
+    height: 60vh;
+    background-color: linear-gradient(#086972,#01a9b4);
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px #000000AD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white
+}
+
+.profile-back{
+    width: 100%;
+    height: 100vh;
+    background-color: #01a9b4;
     background-size: 100%;
     display: flex;
     flex-direction: column;
@@ -544,6 +583,7 @@ a:active {
     align-items: center;
     text-align: center;
 }
+
 
 .form-container {
     width: 40%;
@@ -567,6 +607,48 @@ a:active {
     width: 80%;
 }
 
+
+
+#new-category > .form-group > .form-control{
+    color: black;
+    background: rgba(200, 255, 255, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    width:100%;
+ 
+}
+
+#new-category{
+    padding-top: 100px;
+    width:70%;
+    
+}
+
+#update-profile > .form-size >.form-group > .form-control{
+    color: black;
+    background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+ 
+}
+
+#update-profile > h1 {
+    font-family: Andres; 
+    text-align: center;
+
+}
+
+#update-profile > .form-size{
+    width:100%;
+}
+
+#update-profile >.form-size > .form-group > .form-control:focus{
+    background: white 0% 0% no-repeat padding-box;
+    box-shadow:  0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
+    
+}
+
+
+
+
 #login-form>.form-group>.form-control {
     color: black;
     background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
@@ -578,7 +660,16 @@ a:active {
     box-shadow: 0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
 }
 
-.glow:hover {
+#link-to-dash{
+    font-size: large;
+    
+}
+
+.buttonHover:hover{
+    background-color: #01a9b4;
+}
+
+.glow:hover{
     background-color: #e40737;
 }
 
@@ -586,7 +677,7 @@ a:active {
     width: 100%;
     height: 100vh;
     background-image: url("./images/sign-alt-3.jpg");
-    background-size: 100%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -736,3 +827,139 @@ ul {
 .width-adjust {
     width: 70%;
 }
+
+.admin-bg{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 2em;
+}
+
+.prod-back{
+    background: #FF512F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}   
+
+.pad-reduce{
+    padding: 3%;
+    margin-bottom: 0%;
+}
+
+.prod-card{
+    width: 100%;
+    display: flex;
+}
+
+.prod-card .card{
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    color: #383838;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.prod-card .card .product-img{
+    width: 40%;
+}
+
+.prod-card .card .card-info{
+    width: 60%;
+    text-align: left;
+    border-radius: 0px 10px 10px 0px;
+    display: block;
+    padding: 1%;
+}
+
+.prod-card .card .card-info .card-text{
+    font-size: xx-large;
+}
+
+.prod-card .card .card-info p{
+    width: 90%;
+}
+
+
+.prod-card .card .card-price{
+    font-size: x-large;
+}
+
+.prod-card .card .product-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.prod-header{
+    text-align: center;
+    font-size: x-large;
+    padding: 1%;
+    background-color: white;
+}
+
+.marg-reduce{
+    margin: 0;
+}
+
+.marg-inc{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.nav-blocks1 {
+    height: 100%;
+    background: #383838 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #000000AD;
+    border-radius: 5px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding:0.7em;
+}
+
+.nav-blocks1:hover{
+    color: white;
+    background: #fa8e3b;
+}
+
+.user-bg{
+    background: #134E5E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #71B280, #134E5E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+padding: 2em;
+}
+
+.nav-blocks2 {
+    height: 100%;
+    background: #383838 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #000000AD;
+    border-radius: 5px;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding:1.1em;
+}
+
+.nav-blocks2:hover{
+    color: white;
+    background: #fa8e3b;
+}
+
+.spacing-div {
+    color: white;
+    width: 100%;
+    height: 2em;
+}
+
+.table-layout{
+    text-align: center;
+}
+

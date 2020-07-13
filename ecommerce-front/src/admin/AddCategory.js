@@ -52,7 +52,7 @@ const AddCategory = () => {
 
     const goBack = () => (
         <div className="mt-5">
-            <Link to="/admin/dashboard" className="text-warning">
+            <Link id = "link-to-dash" to="/admin/dashboard" >
                 Back to dashboard
             </Link>
         </div>
@@ -60,9 +60,10 @@ const AddCategory = () => {
 
     const newCategoryForm = () => (
         <form onSubmit={clickSubmit} >
+            <div id = "new-category">
             <div className="form-group">
-                <label className="text-muted">
-                    Name
+                <label className="h2">
+                    Category Name
                 </label>
                 <input
                     type="text"
@@ -71,9 +72,10 @@ const AddCategory = () => {
                     value={name}
                     required />
             </div>
-            <button className="btn btn-outline-primary">
+            <button className="btn btn-outline-primary buttonHover">
                 Create Category
             </button>
+            </div>
         </form>
     )
 
@@ -81,8 +83,8 @@ const AddCategory = () => {
     return (
         <Layout title="Add new Category" description={`Hello, ${user.name}!, ready to add a new category?`}>
             <div class="menu-background"></div>
-
-            <div className="row">
+            
+            <div className="row">  
 
                 <div className="col-md-8 offset-md-2">
                     {showSuccess()}

@@ -66,16 +66,21 @@ const Profile = ({match}) => {
     const redirectUser = (success) => {
         if(success){
             return(
-                <Redirect to="/admin/dashboard" />
+                <Redirect to="/user/dashboard" />
             )
         }
     }
 
     // form for the profile update
     const profileUpdate = (name, email, password) => (
-        <form>
-            <div className="form-group">
-                <label className="text-muted">Name</label>
+        <div className = "profile-back">
+        <div className = "form-container">
+        <form id="update-profile">
+            <h1>UPDATE PROFILE</h1>
+        
+            <div class="form-size">
+                <div className = "form-group">
+                <label>Name</label>
                 <input type="text" 
                 onChange={handleChange('name')} 
                 className="form-control" 
@@ -83,7 +88,7 @@ const Profile = ({match}) => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Email</label>
+                <label>Email</label>
                 <input type="email" 
                 onChange={handleChange('email')} 
                 className="form-control" 
@@ -91,22 +96,22 @@ const Profile = ({match}) => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Password</label>
+                <label>Password</label>
                 <input type="password" 
                 onChange={handleChange('password')} 
                 className="form-control" 
                 value={password} />
             </div>
-
-            <button onClick={clickSubmit} className="btn btn-primary">Submit</button>
+            </div>
+            <button onClick={clickSubmit} className="btn btn-primary buttonHover">Submit</button>
         </form>
+        </div>
+        </div>
     )
 
     return (
         <Layout title = "User Profile" description = "Update your profile" className="container-fluid">
-
-
-            <h2 className="mb-4"> Profile Update </h2>
+            
             {profileUpdate(name, email, password)}
             {redirectUser(success)}
 
