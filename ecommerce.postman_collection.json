@@ -1,0 +1,966 @@
+{
+	"info": {
+		"_postman_id": "3b78a437-a269-4e4c-9147-9478394c52ef",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SIGN UP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"ishan\",\n\t\"email\": \"ishan@gmail.com\",\n\t\"password\":\"qwerty1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN IN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"ishan@gmail.com\",\n\t\"password\":\"qwerty1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SIGN OUT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY READ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYjYxNjY3NDdkNzNmNjQ5NDAyZTgiLCJpYXQiOjE1OTI1MDY0MDN9.oYILGTu1Yma1mbv49jEFV7juZl2hyThflYex8fetfuY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "oneplus5",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "great camera with A13 bionic chip",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "5eebb8426747d73f649402ed",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/hp/react/final/ecom images/one plus 5.jpg",
+							"disabled": true
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/product/5eebda69349a2913c816eb5c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"5eebda69349a2913c816eb5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2Njc3MzF9.2PCombiJQp1fAtcTSmD4CgwZldXatsMmfSi8BldySG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Perfumes\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/category/create/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"create",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2Njc3MzF9.2PCombiJQp1fAtcTSmD4CgwZldXatsMmfSi8BldySG0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Perfume\"\r\n}",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/category/5f0cb352d86f374cecc96a9c/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"5f0cb352d86f374cecc96a9c",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2Njc3MzF9.2PCombiJQp1fAtcTSmD4CgwZldXatsMmfSi8BldySG0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Perfumes\"\r\n}\r\n",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/category/5f0cb352d86f374cecc96a9c/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"category",
+						"5f0cb352d86f374cecc96a9c",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CATEGORY LIST",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYjYxNjY3NDdkNzNmNjQ5NDAyZTgiLCJpYXQiOjE1OTI1MDY0MDN9.oYILGTu1Yma1mbv49jEFV7juZl2hyThflYex8fetfuY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT READ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYjYxNjY3NDdkNzNmNjQ5NDAyZTgiLCJpYXQiOjE1OTI1MDY0MDN9.oYILGTu1Yma1mbv49jEFV7juZl2hyThflYex8fetfuY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/product/5f09c3f53271c63d6c2a4f24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"5f09c3f53271c63d6c2a4f24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT CREATE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": " iphone 6s ",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "a great phone with a10 bionic chip",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "5f08ba013af525460425024d",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/hp/react/final/ecom images/iphone 11 pro.jpg"
+						},
+						{
+							"key": "shipping",
+							"value": "0",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/product/create/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"create",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT REMOVE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/product/5f0cbc6fd86f374cecc96a9e/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"5f0cbc6fd86f374cecc96a9e",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "one plus",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "china phone 1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "100001",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "5f09c3d13271c63d6c2a4f23",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "quantity",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/hp/react/final/ecom images/one plus 8 pro.jpg",
+							"disabled": true
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/product/5f09c3f53271c63d6c2a4f24/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"5f09c3f53271c63d6c2a4f24",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT LIST",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYjYxNjY3NDdkNzNmNjQ5NDAyZTgiLCJpYXQiOjE1OTI1MDY0MDN9.oYILGTu1Yma1mbv49jEFV7juZl2hyThflYex8fetfuY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT LIST SEARCH",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2Njc3MzF9.2PCombiJQp1fAtcTSmD4CgwZldXatsMmfSi8BldySG0",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/products/search?search=iPhone",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "iPhone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT LIST RELATED",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYjYxNjY3NDdkNzNmNjQ5NDAyZTgiLCJpYXQiOjE1OTI1MDY0MDN9.oYILGTu1Yma1mbv49jEFV7juZl2hyThflYex8fetfuY",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/products/related/5f09c50a3271c63d6c2a4f26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"related",
+						"5f09c50a3271c63d6c2a4f26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCT CATEGORIES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/products/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PRODUCTS SEARCH",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.d-wRtrQU7UBt-8y6-ar4iu-BpbBk",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"limit\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/products/by/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"products",
+						"by",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PHOTO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/product/photo/5f09c3f53271c63d6c2a4f24",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"product",
+						"photo",
+						"5f09c3f53271c63d6c2a4f24"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER READ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "USER UPDATE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PURCHASE HISTORY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ishan\"\r\n}",
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/orders/by/user/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders",
+						"by",
+						"user",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GENERATE TOKEN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/braintree/getToken/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"braintree",
+						"getToken",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROCESS PAYMENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/braintree/payment/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"braintree",
+						"payment",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE ORDER",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjBjNzIzMjVmZWY3NjJiMThjZjU4YTEiLCJpYXQiOjE1OTQ2NzAwNTR9.yZBf4wCeI0LcIain924KcIdP5lzTVAQ2BZSVsROyBYg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/create/5f0c72325fef762b18cf58a1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"create",
+						"5f0c72325fef762b18cf58a1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
