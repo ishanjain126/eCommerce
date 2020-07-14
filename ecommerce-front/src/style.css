@@ -682,7 +682,30 @@ a:active {
  
 }
 
+
+#update-profile > .form-group > .form-control{
+    color: black;
+    background: rgba(223, 222, 222, 0.705) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    width:100%;
+    margin: 1% auto;
+    padding: 0%;
+ 
+}
+
+
+#update-profile>.form-group>.h2{
+    color:black;
+}
+
 #new-category > .btn{
+    margin: 1% auto;
+    border-radius: 10px;
+}
+
+
+
+#update-profile > .btn{
     margin: 1% auto;
     border-radius: 10px;
 }
@@ -727,27 +750,11 @@ a:active {
     color: #383838
 }
 
-#update-profile > .form-size >.form-group > .form-control{
-    color: black;
-    background: rgba(255, 255, 255, 0.705) 0% 0% no-repeat padding-box;
- 
-}
 
-#update-profile > h1 {
-    font-family: Andres; 
-    text-align: center;
 
-}
 
-#update-profile > .form-size{
-    width:100%;
-}
 
-#update-profile >.form-size > .form-group > .form-control:focus{
-    background: white 0% 0% no-repeat padding-box;
-    box-shadow:  0px 1px 1px rgba(236, 4, 101, 0.192) inset, 0px 0px 8px rgba(236, 4, 101, 0.5);
-    
-}
+
 
 
 

@@ -73,22 +73,23 @@ const Profile = ({match}) => {
 
     // form for the profile update
     const profileUpdate = (name, email, password) => (
-        <div className = "profile-back">
-        <div className = "form-container">
-        <form id="update-profile">
-            <h1>UPDATE PROFILE</h1>
         
-            <div class="form-size">
+        
+        <form>
+        <div id = "update-profile">
+            <h2>UPDATE PROFILE</h2>
+        
+            
                 <div className = "form-group">
-                <label>Name</label>
+                <label class = "h2">Name</label>
                 <input type="text" 
                 onChange={handleChange('name')} 
                 className="form-control" 
                 value={name} />
-            </div>
-
+            
+                </div>
             <div className="form-group">
-                <label>Email</label>
+                <label class = "h2">Email</label>
                 <input type="email" 
                 onChange={handleChange('email')} 
                 className="form-control" 
@@ -96,24 +97,34 @@ const Profile = ({match}) => {
             </div>
 
             <div className="form-group">
-                <label>Password</label>
+                <label class = "h2">Password</label>
                 <input type="password" 
                 onChange={handleChange('password')} 
                 className="form-control" 
                 value={password} />
             </div>
+          
+            <button onClick={clickSubmit} className="btn btn-outline-primary buttonHover">Submit</button>
             </div>
-            <button onClick={clickSubmit} className="btn btn-primary buttonHover">Submit</button>
         </form>
-        </div>
-        </div>
+        
     )
 
     return (
         <Layout title = "User Profile" description = "Update your profile" className="container-fluid">
+            <div class="menu-background"></div>
             
-            {profileUpdate(name, email, password)}
-            {redirectUser(success)}
+
+            <div className="cat-card center-96">  
+            <div className="row jumbotron height-adjust border-15 pad-null">
+                <div className="colw20 specify-height marg-reduce"><div className="vert-text">UPDATE PROFILE</div></div>
+                <div className="colw80 pad-null specify-height info pad-increase">
+                {profileUpdate(name, email, password)}
+                {redirectUser(success)}
+                </div>
+            </div>
+            </div>
+
 
         </Layout>
     );
