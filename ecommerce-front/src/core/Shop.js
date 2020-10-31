@@ -24,7 +24,7 @@ const Shop  = () => {
     const [size, setSize] = useState(0)
     const [filteredResults, setFilteredResults] = useState([])
 
-
+    // loads categories
     const init = () => {
         getCategories()
         .then(data => {
