@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const crypto = require("crypto")
+// generate the unique strings
 const {v1:uuidv1} = require('uuid')
 
 const userSchema = new mongoose.Schema({
