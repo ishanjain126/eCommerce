@@ -4,6 +4,8 @@ import ShowImage from './ShowImage';
 import moment from 'moment';
 import { addItem, updateItem, removeItem } from './cartHelpers';
 
+// This is a test comment
+
 
 const Card = ({
   product,
